@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WaxBrew — Souvenir from Montenegro</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0e0e0e;
+      --gold:    #c8a96e;
+      --gold2:   #e0c285;
+      --text:    #e8e8e8;
+      --muted:   #888;
+      --border:  #2a2a2a;
+      --surface: #181818;
+    }
+
+    html, body {
+      width: 210mm;
+      height: 297mm;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Arial', sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12mm 14mm;
+      justify-content: space-between;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 8mm;
+      border-bottom: 1px solid var(--border);
+      width: 100%;
+      text-align: center;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .brand-name {
+      font-size: 34px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+    .tagline {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: lowercase;
+      margin-top: -4px;
+    }
+
+    /* ── Hero ── */
+    .hero-block {
+      width: 100%;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .hero-title {
+      font-size: 40px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+    }
+    .hero-title span {
+      color: var(--gold2);
+    }
+    .hero-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    /* ── Offer cards ── */
+    .offers {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .offer-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .offer-card--kit    { border-color: rgba(200,169,110,0.45); }
+    .offer-card--vinyl  { border-color: rgba(154,110,200,0.45); }
+    .offer-card--tasting{ border-color: rgba(74,143,168,0.45); }
+
+    .offer-icon {
+      font-size: 30px;
+      flex-shrink: 0;
+      width: 38px;
+      text-align: center;
+      margin-top: 2px;
+    }
+    .offer-body { flex: 1; }
+
+    .offer-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      padding: 2px 8px;
+      margin-bottom: 5px;
+    }
+    .offer-card--kit    .offer-tag { background: rgba(200,169,110,0.15); color: #d4b87a; }
+    .offer-card--vinyl  .offer-tag { background: rgba(154,110,200,0.15); color: #b48ce0; }
+    .offer-card--tasting.offer-tag,
+    .offer-card--tasting .offer-tag { background: rgba(74,143,168,0.15);  color: #6bb8d3; }
+
+    .offer-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+    .offer-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .offer-desc strong { color: var(--text); }
+
+    .offer-price-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      flex-shrink: 0;
+      gap: 3px;
+    }
+    .offer-price {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--gold2);
+      white-space: nowrap;
+      line-height: 1;
+    }
+    .offer-price-note {
+      font-size: 10px;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    /* ── No-reg notice ── */
+    .no-reg {
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      padding: 8px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .no-reg strong { color: var(--text); }
+
+    /* ── QR block (3 platforms) ── */
+    .qr-block {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid rgba(200,169,110,0.3);
+      border-radius: 12px;
+      padding: 7mm 10mm;
+    }
+    .qr-block-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 5mm;
+    }
+    .qr-platforms {
+      display: flex;
+      gap: 6mm;
+      justify-content: center;
+    }
+    .qr-platform {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .qr-img {
+      width: 34mm;
+      height: 34mm;
+      border-radius: 5px;
+      background: #fff;
+      padding: 3px;
+    }
+    .qr-platform-name {
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 3px;
+    }
+    .qr-platform-handle {
+      font-size: 9px;
+      color: var(--muted);
+    }
+    .qr-name--tg { color: #229ED9; }
+    .qr-name--wa { color: #25D366; }
+    .qr-name--vb { color: #7360F2; }
+
+    /* ── Flight tiers ── */
+    .flight-tiers {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: 10px;
+      border-top: 1px solid rgba(74,143,168,0.2);
+      padding-top: 10px;
+    }
+    .flight-tier {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .ft-label {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .ft-label em { font-style: normal; color: #666; }
+    .ft-price {
+      font-size: 20px;
+      font-weight: 800;
+      color: #6bb8d3;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .ft-group .ft-label { color: #b0b0b0; }
+
+    /* ── Footer ── */
+    .footer {
+      width: 100%;
+      text-align: center;
+      font-size: 10px;
+      color: #444;
+    }
+
+    @media print {
+      html, body { width: 210mm; height: 297mm; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo-wrap">
+      <img class="logo-img" src="logo.png" alt="WaxBrew">
+      <div>
+        <div class="brand-name">WaxBrew</div>
+        <div class="tagline">specialty coffee &amp; vinyl · Budva</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-block">
+    <div class="hero-eyebrow">for our guests</div>
+    <div class="hero-title">Souvenir from<br><span>Montenegro</span></div>
+    <div class="hero-sub">Three ways to take a piece of Budva home with you.</div>
+  </div>
+
+  <div class="offers">
+
+    <!-- Offer 1: Coffee Kit -->
+    <div class="offer-card offer-card--kit">
+      <div class="offer-icon">🫘</div>
+      <div class="offer-body">
+        <div class="offer-tag">Coffee to go home</div>
+        <div class="offer-title">Budva Morning Kit</div>
+        <div class="offer-desc">
+          Your espresso <strong>+</strong> 250 g WaxBrew signature blend —
+          roasted in-house, right here in Budva.
+          So the morning after your trip still tastes like Montenegro.
+        </div>
+      </div>
+      <div class="offer-price-block">
+        <div class="offer-price">20€</div>
+        <div class="offer-price-note">the bundle</div>
+      </div>
+    </div>
+
+    <!-- Offer 2: Vinyl & Espresso -->
+    <div class="offer-card offer-card--vinyl">
+      <div class="offer-icon">🎵</div>
+      <div class="offer-body">
+        <div class="offer-tag">Music memory</div>
+        <div class="offer-title">Vinyl &amp; Espresso</div>
+        <div class="offer-desc">
+          Buy <strong>any record</strong> from our collection →
+          double espresso on us.
+          The best souvenirs are both listened to and tasted.
+        </div>
+      </div>
+      <div class="offer-price-block">
+        <div class="offer-price">−0€</div>
+        <div class="offer-price-note">espresso free<br>with vinyl</div>
+      </div>
+    </div>
+
+    <!-- Offer 3: Origins Flight (two tiers) -->
+    <div class="offer-card offer-card--tasting">
+      <div class="offer-icon">🌍</div>
+      <div class="offer-body">
+        <div class="offer-tag">Origins experience</div>
+        <div class="offer-title">Origins Flight</div>
+        <div class="offer-desc">
+          Three espressos side by side —
+          <strong>Brazil · Indonesia · Robusta Blend</strong> —
+          roasted in Budva. Taste the difference, take
+          <strong>100 g of your favourite</strong> home.
+        </div>
+        <div class="flight-tiers">
+          <div class="flight-tier">
+            <span class="ft-label">3 espressos + 100 g beans</span>
+            <span class="ft-price">15€</span>
+          </div>
+          <div class="flight-tier ft-group">
+            <span class="ft-label">+ 3 milk drinks <em>· for the table</em></span>
+            <span class="ft-price">25€</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="no-reg">
+    <strong>No registration needed</strong> — just tell the barista which offer you'd like
+  </div>
+
+  <div class="qr-block">
+    <div class="qr-block-title">Join our loyalty program — scan to register</div>
+    <div class="qr-platforms">
+
+      <div class="qr-platform">
+        <img class="qr-img"
+             src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https%3A%2F%2Ft.me%2Fwaxcupbot&margin=6"
+             alt="Telegram QR">
+        <div class="qr-platform-name qr-name--tg">Telegram</div>
+        <div class="qr-platform-handle">t.me/waxcupbot</div>
+      </div>
+
+      <div class="qr-platform">
+        <img class="qr-img"
+             src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https%3A%2F%2Fwa.me%2F38269000000%3Ftext%3Dstart&margin=6"
+             alt="WhatsApp QR">
+        <div class="qr-platform-name qr-name--wa">WhatsApp</div>
+        <div class="qr-platform-handle">wa.me/38269000000</div>
+      </div>
+
+      <div class="qr-platform">
+        <img class="qr-img"
+             src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https%3A%2F%2Fvb.me%2Fwaxbrew&margin=6"
+             alt="Viber QR">
+        <div class="qr-platform-name qr-name--vb">Viber</div>
+        <div class="qr-platform-handle">vb.me/waxbrew</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">WaxBrew © 2025 · waxbrew.com · Budva, Montenegro</div>
+
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="me">
+<head>
+  <meta charset="UTF-8">
+  <title>WaxBrew — Kartica gosta (ME)</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:     #0e0e0e;
+      --gold:   #c8a96e;
+      --text:   #e8e8e8;
+      --muted:  #888;
+      --border: #2a2a2a;
+      --surface:#181818;
+    }
+
+    html, body {
+      width: 210mm;
+      height: 297mm;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Arial', sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12mm 14mm;
+      gap: 0;
+      justify-content: space-between;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 10mm;
+      border-bottom: 1px solid var(--border);
+      width: 100%;
+      text-align: center;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo-img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .brand-name {
+      font-size: 36px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+    .tagline {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: lowercase;
+      margin-top: -4px;
+    }
+
+    /* ── Hero text ── */
+    .hero-block {
+      width: 100%;
+      text-align: center;
+      padding: 10mm 0 8mm;
+    }
+    .hero-label {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .hero-title {
+      font-size: 34px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+    }
+    .hero-sub {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* ── Stamps ── */
+    .stamps {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 8mm;
+    }
+
+    .stamp-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 13px 18px;
+    }
+    .stamp-row--gold  { border-color: rgba(200,169,110,0.4); }
+    .stamp-row--beans { border-color: rgba(255,255,255,0.12); }
+    .stamp-row--vinyl { border-color: rgba(255,255,255,0.12); }
+
+    .stamp-icon {
+      font-size: 26px;
+      flex-shrink: 0;
+      width: 34px;
+      text-align: center;
+    }
+    .stamp-text { flex: 1; }
+    .stamp-action {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .stamp-detail {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .stamp-arrow {
+      font-size: 18px;
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .stamp-reward {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gold);
+      flex-shrink: 0;
+      text-align: right;
+    }
+
+    /* ── Tiers ── */
+    .tiers-block {
+      width: 100%;
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8mm;
+    }
+    .tier-item {
+      flex: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .tier-item--local   { border-color: rgba(74,143,168,0.4); }
+    .tier-item--premium { border-color: rgba(200,169,110,0.4); }
+    .tier-item--member  { border-color: rgba(154,110,200,0.4); }
+
+    .tier-title {
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .tier-title--local   { color: #4a8fa8; }
+    .tier-title--premium { color: var(--gold); }
+    .tier-title--member  { color: #9a6ec8; }
+    .tier-desc {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* ── QR block (3 platforms) ── */
+    .qr-block {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid rgba(200,169,110,0.3);
+      border-radius: 12px;
+      padding: 7mm 10mm;
+    }
+    .qr-block-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 5mm;
+    }
+    .qr-platforms {
+      display: flex;
+      gap: 6mm;
+      justify-content: center;
+    }
+    .qr-platform {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .qr-img {
+      width: 34mm;
+      height: 34mm;
+      border-radius: 5px;
+      background: #fff;
+      padding: 3px;
+    }
+    .qr-platform-name {
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 3px;
+    }
+    .qr-platform-handle {
+      font-size: 9px;
+      color: var(--muted);
+    }
+    .qr-name--tg { color: #229ED9; }
+    .qr-name--wa { color: #25D366; }
+    .qr-name--vb { color: #7360F2; }
+
+    /* ── Footer ── */
+    .footer {
+      width: 100%;
+      text-align: center;
+      font-size: 10px;
+      color: #444;
+      padding-top: 5mm;
+    }
+
+    @media print {
+      html, body {
+        width: 210mm;
+        height: 297mm;
+      }
+    }
+
+    .qr-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-top: 10px;
+      padding: 0 4px;
+    }
+    .qr-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .qr-n {
+      min-width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #0e0e0e;
+      font-size: 9px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo-wrap">
+      <img class="logo-img" src="../logo.png" alt="WaxBrew">
+      <div>
+        <div class="brand-name">WaxBrew</div>
+        <div class="tagline">specialty coffee &amp; vinyl · Budva</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-block">
+    <div class="hero-label">program lojalnosti</div>
+    <div class="hero-title">Kartica gosta</div>
+    <div class="hero-sub">Pij kafu — zarađuj nagrade. Jednostavno, bez plastičnih kartica.</div>
+  </div>
+
+  <div class="stamps">
+
+    <div class="stamp-row stamp-row--gold">
+      <span class="stamp-icon">☕</span>
+      <div class="stamp-text">
+        <div class="stamp-action">Svakih 5 šoljica kafe</div>
+        <div class="stamp-detail">Local i viši status: svake 4 šoljice</div>
+      </div>
+      <span class="stamp-arrow">→</span>
+      <div class="stamp-reward">kafa<br>na poklon</div>
+    </div>
+
+    <div class="stamp-row stamp-row--beans">
+      <span class="stamp-icon">🫘</span>
+      <div class="stamp-text">
+        <div class="stamp-action">Svakih 5 paketa zrna kafe</div>
+        <div class="stamp-detail">Premium i Member: svakih 4 paketa</div>
+      </div>
+      <span class="stamp-arrow">→</span>
+      <div class="stamp-reward">paket<br>na poklon</div>
+    </div>
+
+    <div class="stamp-row stamp-row--vinyl">
+      <span class="stamp-icon">◎</span>
+      <div class="stamp-text">
+        <div class="stamp-action">Svakih 5 vinil ploča</div>
+        <div class="stamp-detail">Premium i Member: svakih 4 ploče</div>
+      </div>
+      <span class="stamp-arrow">→</span>
+      <div class="stamp-reward">ploča<br>na poklon</div>
+    </div>
+
+  </div>
+
+  <div class="tiers-block">
+
+    <div class="tier-item tier-item--local">
+      <div class="tier-title tier-title--local">🔥 Local</div>
+      <div class="tier-desc">Nakon 30 šoljica<br>−10% popust na hranu</div>
+    </div>
+
+    <div class="tier-item tier-item--premium">
+      <div class="tier-title tier-title--premium">⭐ Premium</div>
+      <div class="tier-desc">Local + 3 zrna + 1 ploča<br>−20% popust na hranu</div>
+    </div>
+
+    <div class="tier-item tier-item--member">
+      <div class="tier-title tier-title--member">🎟 Member</div>
+      <div class="tier-desc">100€/god. · cuppings<br>rani pristup · −20% hrana</div>
+    </div>
+
+  </div>
+
+  <div class="qr-block">
+    <div class="qr-block-title">Skenirajte i registrujte se</div>
+    <div class="qr-platforms">
+      <div class="qr-platform">
+        <img class="qr-img"
+             src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https%3A%2F%2Ft.me%2Fwaxcupbot&margin=6"
+             alt="Telegram QR">
+        <div class="qr-platform-name qr-name--tg">Telegram</div>
+        <div class="qr-platform-handle">t.me/waxcupbot</div>
+      </div>
+    </div>
+    <div class="qr-steps">
+      <div class="qr-step"><span class="qr-n">1</span>Skenirajte QR kod — bot Vas dočekuje u Telegramu</div>
+      <div class="qr-step"><span class="qr-n">2</span>Recite baristy posljednje 4 cifre Vašeg broja — ili pritisnite "Zabilježi posjet" u botu</div>
+      <div class="qr-step"><span class="qr-n">3</span>Preuzmite besplatnu kafu, zrna i vinil ploče</div>
+    </div>
+  </div>
+
+  <div class="footer">WaxBrew © 2026 · waxbrew.com</div>
+
+</body>
+</html>

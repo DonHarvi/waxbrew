@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WaxBrew — specialty coffee & vinyl</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- i18n -->
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        el.textContent = lang === 'sr' ? (el.dataset.sr || el.dataset.en) : el.dataset.en;
+      });
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      localStorage.setItem('waxbrew-lang', lang);
+      document.documentElement.lang = lang;
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var saved   = localStorage.getItem('waxbrew-lang');
+      var browser = (navigator.language || '').toLowerCase();
+      var isSr    = browser.startsWith('sr') || browser.startsWith('hr') ||
+                    browser.startsWith('bs') || browser.startsWith('cnr');
+      setLang(saved || (isSr ? 'sr' : 'en'));
+    });
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMMNXCF8LX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PMMNXCF8LX', { page_title: 'WaxBrew — Home', page_path: '/' });
+  </script>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-content">
+      <img class="hero-logo" src="logo.png" alt="WaxBrew logo">
+      <div>
+        <div class="logo">WaxBrew</div>
+        <div class="tagline">specialty coffee & vinyl · Budva</div>
+      </div>
+      <div class="lang-switch">
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="sr" onclick="setLang('sr')">SR</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Locations -->
+    <section class="locations">
+      <a class="location-card" href="/reviews/" rel="noopener"
+         style="background-image:url(log_textura1.webp)"
+         onclick="gtag('event','click_location',{event_category:'navigation',event_label:'textura'})">
+        <div class="location-card-overlay"></div>
+        <span class="location-name">Textura</span>
+        <span class="location-action" data-en="Map &amp; Reviews ↗" data-sr="Mapa i recenzije ↗">Map &amp; Reviews ↗</span>
+      </a>
+      <a class="location-card" href="/bigwave-opening/" rel="noopener"
+         style="background-image:url(loc-bigwave.png)"
+         onclick="gtag('event','click_location',{event_category:'navigation',event_label:'bigwave'})">
+        <div class="location-card-overlay"></div>
+        <span class="location-name">Bigwave</span>
+        <span class="location-action" data-en="Opening Soon ↗" data-sr="Uskoro otvaranje ↗">Opening Soon ↗</span>
+      </a>
+      <a class="location-card" href="/location-lemonade/" rel="noopener"
+         style="background-image:url(loc-lemonade.png)"
+         onclick="gtag('event','click_location',{event_category:'navigation',event_label:'lemonade'})">
+        <div class="location-card-overlay"></div>
+        <span class="location-name">Lemonade</span>
+        <span class="location-action" data-en="Map &amp; Reviews ↗" data-sr="Mapa i recenzije ↗">Map &amp; Reviews ↗</span>
+      </a>
+    </section>
+
+    <!-- Review CTA -->
+    <a class="review-cta" href="/review/"
+       onclick="gtag('event','click_review',{event_category:'conversion',event_label:'google_review'})">
+      <span data-en="⭐ Leave a Review" data-sr="⭐ Ostavi recenziju">⭐ Leave a Review</span>
+      <span class="review-arrow">→</span>
+    </a>
+
+    <!-- WaxBrew Cup News Banner -->
+    <a class="news-banner" href="/loyalty/"
+       onclick="gtag('event','click_news',{event_category:'conversion',event_label:'waxcup_launch'})">
+      <div class="news-badge" data-en="New" data-sr="Novo">New</div>
+      <div class="news-content">
+        <div class="news-title">☕ WaxBrew Cup</div>
+        <div class="news-sub" data-en="Loyalty program — free coffee, beans &amp; vinyl" data-sr="Program lojalnosti — besplatna kafa, zrna i vinil">Loyalty program — free coffee, beans &amp; vinyl</div>
+      </div>
+      <span class="news-arrow">→</span>
+    </a>
+
+    <!-- Promos -->
+    <section class="promos">
+      <a class="promo-card promo-happy-hours" href="/happy-hours/"
+         onclick="gtag('event','click_promo',{event_category:'promo',event_label:'happy_hours'})">
+        <div class="promo-label">Coffee promo · Textura</div>
+        <div class="promo-title">Happy Hours: 20% Off</div>
+        <div class="promo-sub" data-en="14:00 – 16:00 daily" data-sr="14:00 – 16:00 svaki dan">14:00 – 16:00 daily</div>
+        <div class="promo-arrow">→</div>
+      </a>
+      <a class="promo-card promo-bigwave" href="/bigwave-opening/"
+         onclick="gtag('event','click_promo',{event_category:'promo',event_label:'bigwave_opening'})">
+        <div class="promo-label">New location</div>
+        <div class="promo-title">Bigwave — Opening Soon</div>
+        <div class="promo-sub" data-en="Stay tuned" data-sr="Pratite vijesti">Stay tuned</div>
+        <div class="promo-arrow">→</div>
+      </a>
+      <a class="promo-card promo-lemonade" href="/lemonade-togo/"
+         onclick="gtag('event','click_promo',{event_category:'promo',event_label:'lemonade_togo'})">
+        <div class="promo-label">Coffee promo · Lemonade</div>
+        <div class="promo-title" data-en="20% Off To Go" data-sr="20% popusta na ponošenje">20% Off To Go</div>
+        <div class="promo-sub" data-en="All to-go orders" data-sr="Sve porudžbine za van">All to-go orders</div>
+        <div class="promo-arrow">→</div>
+      </a>
+    </section>
+
+    <!-- Now Playing (hidden — playlist not configured yet) -->
+    <section class="now-playing-section" style="display:none">
+      <div class="section-header">
+        <div class="dot"></div>
+        <span data-en="Today at Bigwave" data-sr="Danas u Bigwave">Today at Bigwave</span>
+      </div>
+      <div id="playlist" class="playlist">
+        <div class="loading">Loading playlist…</div>
+      </div>
+    </section>
+
+    <!-- WaxBrew Cup -->
+    <section class="waxcup-section">
+      <div class="section-header">
+        <div class="dot"></div>
+        <span data-en="Loyalty Program" data-sr="Program lojalnosti">Loyalty Program</span>
+      </div>
+      <a class="waxcup-card" href="/loyalty/"
+         onclick="gtag('event','click_loyalty',{event_category:'conversion',event_label:'waxcup'})">
+        <div class="waxcup-stamps">
+          <span class="waxcup-stamp waxcup-stamp--full">☕</span>
+          <span class="waxcup-stamp waxcup-stamp--full">☕</span>
+          <span class="waxcup-stamp waxcup-stamp--full">☕</span>
+          <span class="waxcup-stamp waxcup-stamp--full">☕</span>
+          <span class="waxcup-stamp waxcup-stamp--empty">○</span>
+        </div>
+        <div class="waxcup-body">
+          <div class="waxcup-name">WaxBrew Cup</div>
+          <div class="waxcup-title" data-en="Every 5 coffees → free coffee" data-sr="Svakih 5 kafa → kafa na poklon">Every 5 coffees → free coffee</div>
+          <div class="waxcup-sub" data-en="No app · join via Telegram" data-sr="Bez aplikacije · prijava putem Telegrama">No app · join via Telegram</div>
+        </div>
+        <span class="waxcup-arrow">→</span>
+      </a>
+    </section>
+
+    <!-- Gallery -->
+    <div class="gallery">
+      <img class="gallery-img" src="gallery-vinyl-coffee.png" alt="vinyl & coffee" loading="lazy">
+      <img class="gallery-img" src="gallery-sea.png"          alt="Lemonade sea view" loading="lazy">
+      <img class="gallery-img" src="gallery-textura.png"      alt="Textura interior" loading="lazy">
+      <img class="gallery-img" src="hero.jpeg"                alt="WaxBrew sign" loading="lazy" style="object-position: 30% center">
+    </div>
+
+    <!-- Social -->
+    <div class="social-links">
+      <a class="social-btn" href="/instagram/" rel="noopener"
+         onclick="gtag('event','click_social',{event_category:'navigation',event_label:'instagram'})">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+        Instagram
+      </a>
+      <a class="social-btn" href="https://soundcloud.com/kirillmatveev" target="_blank" rel="noopener"
+         onclick="gtag('event','click_social',{event_category:'navigation',event_label:'soundcloud'})">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M1.175 12.225c-.015.109-.023.22-.023.333 0 .113.008.224.023.333.062.45.455.795.918.795s.856-.345.918-.795c.015-.109.023-.22.023-.333 0-.113-.008-.224-.023-.333C2.949 11.775 2.556 11.43 2.093 11.43s-.856.345-.918.795zm3.137-3.9c-.015.109-.023.22-.023.333v7.2c0 .113.008.224.023.333.062.45.455.795.918.795s.856-.345.918-.795c.015-.109.023-.22.023-.333v-7.2c0-.113-.008-.224-.023-.333C6.105 7.875 5.712 7.53 5.249 7.53s-.856.345-.918.795zm3.137-2.25c-.015.109-.023.22-.023.333v9.45c0 .113.008.224.023.333.062.45.455.795.918.795s.856-.345.918-.795c.015-.109.023-.22.023-.333v-9.45c0-.113-.008-.224-.023-.333C9.242 5.625 8.849 5.28 8.386 5.28s-.856.345-.918.795zm3.138-.9c-.015.109-.023.22-.023.333v10.35c0 .113.008.224.023.333.062.45.455.795.918.795s.856-.345.918-.795c.015-.109.023-.22.023-.333V5.558c0-.113-.008-.224-.023-.333C12.38 4.725 11.987 4.38 11.524 4.38s-.856.345-.918.795zm6.524 1.395c-.405-2.19-2.325-3.855-4.65-3.855-.84 0-1.627.232-2.302.637v11.86c0 .57.463 1.033 1.033 1.033H21c1.657 0 3-1.343 3-3 0-1.553-1.178-2.828-2.694-2.977-.069-1.88-1.601-3.398-3.456-3.398l-.876.7z"/>
+        </svg>
+        SoundCloud
+      </a>
+    </div>
+
+    <!-- Shop -->
+    <section class="shop">
+      <a class="shop-card" href="/order/" rel="noopener"
+         onclick="gtag('event','click_shop',{event_category:'conversion',event_label:'coffee'})">
+        <span class="shop-icon">☕</span>
+        <span class="shop-label" data-en="Coffee Beans" data-sr="Kafa u zrnu">Coffee Beans</span>
+        <span class="shop-sub" data-en="order online" data-sr="naruči online">order online</span>
+      </a>
+      <a class="shop-card" href="https://www.discogs.com/seller/Wax.Brew/profile" target="_blank" rel="noopener"
+         onclick="gtag('event','click_shop',{event_category:'conversion',event_label:'vinyl'})">
+        <span class="shop-icon">◉</span>
+        <span class="shop-label" data-en="Vinyl Records" data-sr="Vinilne ploče">Vinyl Records</span>
+        <span class="shop-sub" data-en="shop on Discogs" data-sr="Discogs prodavnica">shop on Discogs</span>
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>WaxBrew © 2026</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WaxBrew — Программа лояльности</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .back-link:hover { color: var(--text); }
+
+    .section-head {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+    .section-head h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .section-head p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* Steps */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+    }
+    .step-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+    }
+    .step h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .step p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    /* Tier path */
+    .tier-path {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 2px 0 6px;
+      margin-bottom: 14px;
+    }
+    .tier-path::-webkit-scrollbar { display: none; }
+    .tier-pill {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      white-space: nowrap;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      flex-shrink: 0;
+    }
+    .tier-pill--local   { border-color: rgba(74,143,168,0.6);  color: #4a8fa8; }
+    .tier-pill--premium { border-color: rgba(200,169,110,0.5); color: var(--gold); }
+    .tier-pill--member  { border-color: rgba(154,110,200,0.5); color: #9a6ec8; }
+    .tier-pill--tourist { border-color: rgba(180,130,70,0.5);  color: #b07038; }
+    .tier-arrow { color: var(--muted); font-size: 14px; flex-shrink: 0; }
+
+    /* Tier cards */
+    .tiers { display: flex; flex-direction: column; gap: 10px; }
+
+    .tier-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .tier-card--local   { border-color: rgba(74,143,168,0.35); }
+    .tier-card--premium { border-color: rgba(200,169,110,0.35); }
+    .tier-card--member  { border-color: rgba(154,110,200,0.35); }
+    .tier-card--tourist { border-color: rgba(180,130,70,0.4); }
+
+    .tier-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .tier-name {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .tier-name--standard { color: var(--text); }
+    .tier-name--local    { color: #4a8fa8; }
+    .tier-name--premium  { color: var(--gold); }
+    .tier-name--member   { color: #9a6ec8; }
+    .tier-name--tourist  { color: #b07038; }
+
+    .tier-badge {
+      font-size: 11px;
+      border-radius: 10px;
+      padding: 4px 12px;
+      white-space: nowrap;
+      font-weight: 600;
+      /* default — Standard */
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .tier-card--local   .tier-badge { background: rgba(74,143,168,0.15);  color: #6bb8d3; border-color: rgba(74,143,168,0.45); }
+    .tier-card--premium .tier-badge { background: rgba(200,169,110,0.15); color: #d4b87a; border-color: rgba(200,169,110,0.45); }
+    .tier-card--member  .tier-badge { background: rgba(154,110,200,0.15); color: #b48ce0; border-color: rgba(154,110,200,0.45); }
+    .tier-card--tourist .tier-badge { background: rgba(180,130,70,0.15);  color: #c89048; border-color: rgba(180,130,70,0.45); }
+
+    .perks {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .perk {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+    }
+    .perk-icon {
+      flex-shrink: 0;
+      width: 20px;
+      text-align: center;
+      font-size: 15px;
+      margin-top: 1px;
+    }
+    .perk-main { color: var(--text); line-height: 1.4; }
+
+    .tier-unlock {
+      font-size: 12px;
+      color: #aaa;
+      border-radius: 6px;
+      padding: 10px 13px;
+      line-height: 1.5;
+      background: rgba(255,255,255,0.06);
+      border-left: 3px solid rgba(255,255,255,0.2);
+      margin-top: 2px;
+    }
+    .tier-unlock strong { color: var(--text); font-weight: 700; }
+    .tier-card--local   .tier-unlock { border-left-color: rgba(74,143,168,0.75); }
+    .tier-card--premium .tier-unlock { border-left-color: rgba(200,169,110,0.75); }
+    .tier-card--member  .tier-unlock { border-left-color: rgba(154,110,200,0.75); }
+    .tier-card--tourist .tier-unlock { border-left-color: rgba(180,130,70,0.75); }
+
+    /* CTA */
+    .cta-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .cta-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
+    .platform-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+    .platform-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 15px 24px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      width: 100%;
+      transition: opacity 0.15s;
+      color: #fff;
+    }
+    .platform-btn:hover { opacity: 0.88; }
+    .platform-btn--tg { background: #229ED9; }
+    .platform-btn--wa { background: #25D366; }
+    .platform-btn--vb { background: #7360F2; }
+    
+  </style>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-ru]').forEach(function(el) {
+        var val = lang === 'en' ? el.dataset.en : lang === 'me' ? (el.dataset.me || el.dataset.ru) : el.dataset.ru;
+        if (val !== undefined) el.innerHTML = val;
+      });
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      localStorage.setItem('waxbrew-lang', lang);
+      document.documentElement.lang = lang;
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var saved   = localStorage.getItem('waxbrew-lang');
+      var browser = (navigator.language || '').toLowerCase();
+      var isMe = browser.startsWith('sr') || browser.startsWith('hr') || browser.startsWith('bs') || browser.startsWith('cnr') || browser.startsWith('me');
+      var isRu = browser.startsWith('ru');
+      setLang(saved || (isRu ? 'ru' : isMe ? 'me' : 'en'));
+    });
+  </script>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <img class="hero-logo" src="logo.png" alt="WaxBrew logo">
+      <div>
+        <div class="logo">WaxBrew</div>
+        <div class="tagline"
+          data-ru="программа лояльности"
+          data-en="loyalty program"
+          data-me="program lojalnosti">программа лояльности</div>
+      </div>
+      <div class="lang-switch">
+        <button class="lang-btn" data-lang="ru" onclick="setLang('ru')">RU</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="me" onclick="setLang('me')">ME</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <a class="back-link" href="/">← WaxBrew</a>
+
+    <!-- How it works -->
+    <section>
+      <div class="section-head">
+        <h2 data-ru="Как это работает" data-en="How it works" data-me="Kako funkcioniše">Как это работает</h2>
+      </div>
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-icon">📲</div>
+          <div>
+            <h3 data-ru="Отсканируйте QR-код" data-en="Scan the QR code" data-me="Skenirajte QR kod">Отсканируйте QR-код</h3>
+            <p data-ru="Автоматическая регистрация — займёт секунду" data-en="Automatic registration — takes a second" data-me="Automatska registracija — traje sekundu">Автоматическая регистрация — займёт секунду</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-icon">☕</div>
+          <div>
+            <h3 data-ru="Отметьте визит" data-en="Check in your visit" data-me="Zabilježite posjet">Отметьте визит</h3>
+            <p data-ru="Назовите бариста 4 последние цифры номера телефона или нажмите «Отметить визит» в вашей карте — бариста учтёт ваши напитки и покупки" data-en="Give the barista the last 4 digits of your phone or tap 'Check In' in your card — the barista will log your drinks and purchases" data-me="Recite baristy posljednje 4 cifre vašeg broja telefona ili pritisnite 'Zabilježi posjet' u vašoj kartici — baristu će zabilježiti vaše napitke i kupovine">Назовите бариста 4 последние цифры номера телефона или нажмите «Отметить визит» в вашей карте — бариста учтёт ваши напитки и покупки</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-icon">🎁</div>
+          <div>
+            <h3 data-ru="Получайте подарки" data-en="Claim your rewards" data-me="Preuzmite nagrade">Получайте подарки</h3>
+            <p data-ru="Пейте кофе в кофейне бесплатно и забирайте подарки домой" data-en="Enjoy free coffee at the café and take gifts home" data-me="Pijte kafu u kafeu besplatno i nosite nagrade kući">Пейте кофе в кофейне бесплатно и забирайте подарки домой</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tiers -->
+    <section>
+      <div class="section-head">
+        <h2 data-ru="Статусы" data-en="Status tiers" data-me="Statusi">Статусы</h2>
+        <p data-ru="Чем больше пьёте — тем больше получаете" data-en="The more you drink, the more you earn" data-me="Što više pijete — više zarađujete">Чем больше пьёте — тем больше получаете</p>
+      </div>
+
+      <div class="tier-path">
+        <div class="tier-pill">📋 Std</div>
+        <span class="tier-arrow">→</span>
+        <div class="tier-pill tier-pill--local">🔥 Local</div>
+        <span class="tier-arrow">→</span>
+        <div class="tier-pill tier-pill--premium">⭐ Premium</div>
+        <span class="tier-arrow">·</span>
+        <div class="tier-pill tier-pill--member">🎟 Member</div>
+      </div>
+
+      <div class="tiers">
+
+        <!-- Standard -->
+        <div class="tier-card">
+          <div class="tier-header">
+            <div class="tier-name tier-name--standard">📋 Standard</div>
+            <div class="tier-badge" data-ru="начальный статус" data-en="starting tier" data-me="početni status">начальный статус</div>
+          </div>
+          <div class="perks">
+            <div class="perk">
+              <span class="perk-icon">☕</span>
+              <span class="perk-main" data-ru="Каждые 5 чашек → кофе в подарок" data-en="Every 5 cups → free coffee" data-me="Svakih 5 šoljica → kafa na poklon">Каждые 5 чашек → кофе в подарок</span>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">●</span>
+              <span class="perk-main" data-ru="Каждые 5 пачек зерна → пачка в подарок" data-en="Every 5 bags of beans → free bag" data-me="Svakih 5 paketa zrna → paket na poklon">Каждые 5 пачек зерна → пачка в подарок</span>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">◎</span>
+              <span class="perk-main" data-ru="Каждые 5 пластинок → пластинка в подарок" data-en="Every 5 vinyl records → free record" data-me="Svakih 5 ploča → ploča na poklon">Каждые 5 пластинок → пластинка в подарок</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Local -->
+        <div class="tier-card tier-card--local">
+          <div class="tier-header">
+            <div class="tier-name tier-name--local">🔥 Local</div>
+            <div class="tier-badge" data-ru="после 30 чашек" data-en="after 30 cups" data-me="nakon 30 šoljica">после 30 чашек</div>
+          </div>
+          <div class="perks">
+            <div class="perk">
+              <span class="perk-icon">☕</span>
+              <span class="perk-main" data-ru="Каждые 4 чашки → кофе в подарок" data-en="Every 4 cups → free coffee" data-me="Svake 4 šoljice → kafa na poklon">Каждые 4 чашки → кофе в подарок</span>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">●</span>
+              <span class="perk-main" data-ru="Каждые 5 пачек зерна → пачка в подарок" data-en="Every 5 bags of beans → free bag" data-me="Svakih 5 paketa zrna → paket na poklon">Каждые 5 пачек зерна → пачка в подарок</span>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">◎</span>
+              <span class="perk-main" data-ru="Каждые 5 пластинок → пластинка в подарок" data-en="Every 5 vinyl records → free record" data-me="Svakih 5 ploča → ploča na poklon">Каждые 5 пластинок → пластинка в подарок</span>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">🍽</span>
+              <span class="perk-main" data-ru="−10% скидка на еду" data-en="−10% food discount" data-me="−10% popust na hranu">−10% скидка на еду</span>
+            </div>
+          </div>
+          <div class="tier-unlock"
+            data-ru="Открывается автоматически после <strong>30 чашек кофе</strong>"
+            data-en="Unlocks automatically after <strong>30 coffees</strong>"
+            data-me="Otvara se automatski nakon <strong>30 šoljica kafe</strong>">
+            Открывается автоматически после <strong>30 чашек кофе</strong>
+          </div>
+        </div>
+
+        <!-- Premium -->
+        <div class="tier-card tier-card--premium">
+          <div class="tier-header">
+            <div class="tier-name tier-name--premium">⭐ Premium</div>
+            <div class="tier-badge" data-ru="за покупки" data-en="earned by purchases" data-me="za kupovine">за покупки</div>
+          </div>
+          <div class="perks">
+            <div class="perk">
+              <span class="perk-icon">☕</span>
+              <span class="perk-main" data-ru="Каждые 4 чашки → кофе в подарок" data-en="Every 4 cups → free coffee" data-me="Svake 4 šoljice → kafa na poklon">Каждые 4 чашки → кофе в подарок</span>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">●</span>
+              <span class="perk-main" data-ru="Каждые 4 пачки зерна → пачка в подарок" data-en="Every 4 bags of beans → free bag" data-me="Svakih 4 paketa zrna → paket na poklon">Каждые 4 пачки зерна → пачка в подарок</span>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">◎</span>
+              <span class="perk-main" data-ru="Каждые 4 пластинки → пластинка в подарок" data-en="Every 4 vinyl records → free record" data-me="Svakih 4 ploče → ploča na poklon">Каждые 4 пластинки → пластинка в подарок</span>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">🍽</span>
+              <span class="perk-main" data-ru="−20% скидка на еду" data-en="−20% food discount" data-me="−20% popust na hranu">−20% скидка на еду</span>
+            </div>
+          </div>
+          <div class="tier-unlock"
+            data-ru="Открывается при статусе Local + <strong>3 пачки зерна</strong> + <strong>1 пластинка</strong>"
+            data-en="Unlocks at Local tier + <strong>3 bags of beans</strong> + <strong>1 vinyl record</strong>"
+            data-me="Otvara se na Local statusu + <strong>3 paketa zrna</strong> + <strong>1 vinil ploča</strong>">
+            Открывается при статусе Local + <strong>3 пачки зерна</strong> + <strong>1 пластинка</strong>
+          </div>
+        </div>
+
+        <!-- Member -->
+        <div class="tier-card tier-card--member">
+          <div class="tier-header">
+            <div class="tier-name tier-name--member">🎟 Member</div>
+            <div class="tier-badge" data-ru="100€ / год" data-en="100€ / year" data-me="100€ / godina">100€ / год</div>
+          </div>
+          <div class="perks">
+            <div class="perk">
+              <span class="perk-icon">☕</span>
+              <span class="perk-main" data-ru="Каждые 4 чашки → кофе в подарок" data-en="Every 4 cups → free coffee" data-me="Svake 4 šoljice → kafa na poklon">Каждые 4 чашки → кофе в подарок</span>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">●</span>
+              <span class="perk-main" data-ru="Каждые 4 пачки зерна → пачка в подарок" data-en="Every 4 bags of beans → free bag" data-me="Svakih 4 paketa zrna → paket na poklon">Каждые 4 пачки зерна → пачка в подарок</span>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">◎</span>
+              <span class="perk-main" data-ru="Каждые 4 пластинки → пластинка в подарок" data-en="Every 4 vinyl records → free record" data-me="Svakih 4 ploče → ploča na poklon">Каждые 4 пластинки → пластинка в подарок</span>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">🍽</span>
+              <span class="perk-main" data-ru="−20% скидка на еду" data-en="−20% food discount" data-me="−20% popust na hranu">−20% скидка на еду</span>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">☕</span>
+              <span class="perk-main" data-ru="Приглашения на закрытые каппинги" data-en="Invitations to private cupping events" data-me="Pozivnice na zatvorene cupping evenте">Приглашения на закрытые каппинги</span>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">🫘</span>
+              <span class="perk-main" data-ru="Ранний доступ к новым зёрнам обжарки" data-en="Early access to new roast releases" data-me="Rani pristup novim zrnima pržionice">Ранний доступ к новым зёрнам обжарки</span>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">◎</span>
+              <span class="perk-main" data-ru="Ранний доступ к новым пластинкам" data-en="Early access to new vinyl arrivals" data-me="Rani pristup novim pločama">Ранний доступ к новым пластинкам</span>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">🎁</span>
+              <span class="perk-main" data-ru="Подарок при вступлении: пачка зерна + пластинка" data-en="Joining gift: 1 bag of beans + 1 vinyl record" data-me="Poklon pri učlanjenju: 1 paket zrna + 1 vinil ploča">Подарок при вступлении: пачка зерна + пластинка</span>
+            </div>
+          </div>
+          <div class="tier-unlock"
+            data-ru="Ежегодный взнос <strong>100€</strong> — оформляется у бариста или администратора"
+            data-en="Annual fee <strong>100€</strong> — sign up with the barista or admin"
+            data-me="Godišnja članarina <strong>100€</strong> — registracija kod baristu ili administratora">
+            Ежегодный взнос <strong>100€</strong> — оформляется у бариста или администратора
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <div class="cta-label" data-ru="Выберите удобный мессенджер" data-en="Choose your messenger" data-me="Odaberite messenger">Выберите удобный мессенджер</div>
+      <div class="platform-btns">
+
+        <a class="platform-btn platform-btn--tg" href="https://t.me/waxcupbot" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.28c-.146.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.956-.924c-.64-.203-.654-.64.136-.954l11.566-4.46c.537-.194 1.006.131.808.169l.023-.319z"/>
+          </svg>
+          Telegram
+        </a>
+
+        <a class="platform-btn platform-btn--wa" href="https://wa.me/38269000000?text=start" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+          WhatsApp
+        </a>
+
+        <a class="platform-btn platform-btn--vb" href="viber://pa?chatURI=waxbrew" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.985.015C9.87.015 4.98.477 2.52 2.733 .615 4.638-.03 7.377.003 10.845c.03 3.3.477 9.765 6.06 11.46v2.64s-.042.99.615.99c.795 0 1.275-.81 2.04-1.665.42-.45.99-1.11 1.425-1.62 3.93.33 6.96-.42 7.305-.525.795-.255 5.295-.84 6.03-6.855.765-6.195-.375-10.11-2.55-11.88C19.08.795 14.1.015 11.985.015z"/></svg>
+          Viber
+        </a>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <span>WaxBrew © 2025</span>
+  </footer>
+
+</body>
+</html>
