@@ -1,0 +1,11 @@
+name = "waxbrew"
+type = "javascript"
+
+[env.production]
+routes = [
+  { pattern = "waxbrew.com/*", zone_name = "waxbrew.com" }
+]
+
+[[routes]]
+pattern = "/sitemap.xml"
+custom_domain = true
