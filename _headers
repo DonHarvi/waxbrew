@@ -1,8 +1,0 @@
-/sitemap.xml
-  Content-Type: text/xml; charset=utf-8
-
-/robots.txt
-  Content-Type: text/plain
-
-/*.xml
-  Content-Type: text/xml; charset=utf-8
