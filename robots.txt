@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://waxbrew.com/sitemap.xml
+Sitemap: https://waxbrew.com/sitemap.txt
