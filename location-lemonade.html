@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WaxBrew Lemonade - Location</title>
+  </head>
+  <body>
+    <p>Opening WaxBrew Lemonade on Google Maps...</p>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      var targetUrl = "https://maps.app.goo.gl/7fMJjQWxCvv6JRLH9";
+
+      var script = document.createElement("script");
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-PMMNXCF8LX";
+      document.head.appendChild(script);
+
+      gtag("js", new Date());
+      gtag("config", "G-PMMNXCF8LX", {
+        page_path: "/location-lemonade",
+        page_title: "WaxBrew Lemonade - Location"
+      });
+      gtag("event", "view_location", {
+        event_category: "redirect",
+        event_label: "lemonade",
+        redirect_target: "google_maps",
+        event_callback: function () {
+          window.location.href = targetUrl;
+        },
+        event_timeout: 1000
+      });
+
+      setTimeout(function () {
+        window.location.href = targetUrl;
+      }, 1200);
+    </script>
+  </body>
+</html>

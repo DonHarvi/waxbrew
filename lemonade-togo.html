@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WaxBrew Lemonade — 20% Off To Go</title>
+    <link rel="stylesheet" href="/assets/promo.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMMNXCF8LX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-PMMNXCF8LX", {
+        page_path: "/lemonade-togo",
+        page_title: "WaxBrew Lemonade — 20% Off To Go"
+      });
+      gtag("event", "view_promo_lemonade_togo", {
+        event_category: "promo",
+        promo_name: "lemonade_togo"
+      });
+    </script>
+    <script>
+      function pSetLang(lang) {
+        document.querySelectorAll('[data-en]').forEach(el => {
+          el.textContent = lang === 'sr' ? (el.dataset.sr || el.dataset.en) : el.dataset.en;
+        });
+        document.querySelectorAll('.plbtn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+        localStorage.setItem('waxbrew-lang', lang);
+        document.documentElement.lang = lang;
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        const saved = localStorage.getItem('waxbrew-lang');
+        const browser = (navigator.language || '').toLowerCase();
+        const isSr = browser.startsWith('sr') || browser.startsWith('hr') || browser.startsWith('bs');
+        pSetLang(saved || (isSr ? 'sr' : 'en'));
+      });
+    </script>
+  </head>
+  <body>
+    <main class="page">
+      <section class="promo">
+        <div class="page-top">
+          <a class="home-btn" href="/">← WaxBrew</a>
+          <div class="page-lang">
+            <button class="plbtn" data-lang="en" onclick="pSetLang('en')">EN</button>
+            <span class="plsep">|</span>
+            <button class="plbtn" data-lang="sr" onclick="pSetLang('sr')">SR</button>
+          </div>
+        </div>
+        <p class="brand">WaxBrew Specialty Coffee &amp; Vinyl / Lemonade</p>
+        <p class="label">Coffee promo</p>
+        <h1 data-en="20% Off To Go" data-sr="20% popusta na ponošenje">20% Off To Go</h1>
+        <p class="copy" data-en="Get 20% off any to-go order at WaxBrew Lemonade. Your coffee, your pace." data-sr="Dobijte 20% popusta na svaku porudžbinu za poneti u WaxBrew Lemonade. Vaša kafa, vaš tempo.">Get 20% off any to-go order at WaxBrew Lemonade. Your coffee, your pace.</p>
+        <p class="terms" data-en="Valid in store only. Applies to all to-go orders. Cannot be combined with other offers." data-sr="Važi samo u lokalu. Primjenjuje se na sve porudžbine za poneti. Ne može se kombinovati sa drugim ponudama.">Valid in store only. Applies to all to-go orders. Cannot be combined with other offers.</p>
+        <div class="actions">
+          <a class="button primary" href="https://maps.app.goo.gl/7fMJjQWxCvv6JRLH9" data-en="Get Directions" data-sr="Kako doći">Get Directions</a>
+        </div>
+        <p class="address">Rafailovici, Budva, Montenegro</p>
+      </section>
+    </main>
+  </body>
+</html>

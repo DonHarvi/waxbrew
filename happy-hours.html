@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WaxBrew Happy Hours</title>
+    <link rel="stylesheet" href="/assets/promo.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMMNXCF8LX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-PMMNXCF8LX", {
+        page_path: "/happy-hours",
+        page_title: "WaxBrew Happy Hours"
+      });
+      gtag("event", "view_promo_happy_hours", {
+        event_category: "promo",
+        promo_name: "happy_hours"
+      });
+    </script>
+    <script>
+      function pSetLang(lang) {
+        document.querySelectorAll('[data-en]').forEach(el => {
+          el.textContent = lang === 'sr' ? (el.dataset.sr || el.dataset.en) : el.dataset.en;
+        });
+        document.querySelectorAll('.plbtn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+        localStorage.setItem('waxbrew-lang', lang);
+        document.documentElement.lang = lang;
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        const saved = localStorage.getItem('waxbrew-lang');
+        const browser = (navigator.language || '').toLowerCase();
+        const isSr = browser.startsWith('sr') || browser.startsWith('hr') || browser.startsWith('bs');
+        pSetLang(saved || (isSr ? 'sr' : 'en'));
+      });
+    </script>
+  </head>
+  <body>
+    <main class="page">
+      <section class="promo">
+        <div class="page-top">
+          <a class="home-btn" href="/">← WaxBrew</a>
+          <div class="page-lang">
+            <button class="plbtn" data-lang="en" onclick="pSetLang('en')">EN</button>
+            <span class="plsep">|</span>
+            <button class="plbtn" data-lang="sr" onclick="pSetLang('sr')">SR</button>
+          </div>
+        </div>
+        <p class="brand">WaxBrew Specialty Coffee &amp; Vinyl / Textura</p>
+        <p class="label">Coffee promo</p>
+        <h1 data-en="Happy Hours: 20% Off" data-sr="Happy Hours: 20% popusta">Happy Hours: 20% Off</h1>
+        <p class="copy" data-en="Get 20% off coffee drinks from 14:00 to 16:00 at WaxBrew Textura." data-sr="Dobijte 20% popusta na kafu od 14:00 do 16:00 u WaxBrew Textura.">Get 20% off coffee drinks from 14:00 to 16:00 at WaxBrew Textura.</p>
+        <p class="terms" data-en="Valid in store only. Applies to coffee drinks during the promo hours." data-sr="Važi samo u lokalu. Primjenjuje se na kafe tokom promotivnog vremena.">Valid in store only. Applies to coffee drinks during the promo hours.</p>
+        <div class="actions">
+          <a class="button primary" href="/menu" data-en="Open Menu" data-sr="Pogledaj meni">Open Menu</a>
+          <a class="button" href="/reviews" data-en="Reviews" data-sr="Recenzije">Reviews</a>
+          <a class="button" href="https://maps.app.goo.gl/h6mKg2DzowqLscRg9" data-en="Get Directions" data-sr="Kako doći">Get Directions</a>
+        </div>
+        <p class="address">Prve Proleterske, Budva, Montenegro</p>
+      </section>
+    </main>
+  </body>
+</html>
