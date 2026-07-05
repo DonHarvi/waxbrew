@@ -5,38 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="/">
     <title>WaxBrew Textura - Reviews</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+      body { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+      .reviews-container {
+        text-align: center;
+        padding: 40px 20px;
+        max-width: 500px;
+      }
+      .reviews-container h1 { margin-bottom: 20px; }
+      .reviews-container p { margin-bottom: 30px; color: var(--muted); }
+      .reviews-btn {
+        display: inline-block;
+        padding: 14px 32px;
+        background: var(--primary);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: opacity 0.2s;
+      }
+      .reviews-btn:hover { opacity: 0.9; }
+      .reviews-rating { margin-top: 40px; font-size: 14px; color: var(--muted); }
+    </style>
   </head>
   <body>
-    <p>Opening WaxBrew Textura reviews on Google Maps...</p>
+    <div class="reviews-container">
+      <h1>⭐ WaxBrew Reviews</h1>
+      <p>See what our customers say about WaxBrew Specialty Coffee & Vinyl</p>
+      <a href="https://www.google.com/maps/place/WaxBrew+Specialty+Coffee+%26+Vinyl%2FTextura/@42.2893056,18.8324521,17z/data=!4m8!3m7!1s0x134dd5082f250a85:0x1e633dec97998383!8m2!3d42.2893056!4d18.835027!9m1!1b1!16s%2Fg%2F11kptdjz0k"
+         class="reviews-btn"
+         target="_blank"
+         rel="noopener">
+        Read Reviews on Google Maps
+      </a>
+      <div class="reviews-rating">
+        Rated 4.9 by 170+ guests on Google Maps
+      </div>
+    </div>
+
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-
-      var targetUrl = "https://www.google.com/maps/place/WaxBrew+Specialty+Coffee+%26+Vinyl%2FTextura/@42.2893056,18.8324521,17z/data=!4m8!3m7!1s0x134dd5082f250a85:0x1e633dec97998383!8m2!3d42.2893056!4d18.835027!9m1!1b1!16s%2Fg%2F11kptdjz0k";
-
       var script = document.createElement("script");
       script.async = true;
       script.src = "https://www.googletagmanager.com/gtag/js?id=G-PMMNXCF8LX";
       document.head.appendChild(script);
-
       gtag("js", new Date());
       gtag("config", "G-PMMNXCF8LX", {
         page_path: "/reviews",
         page_title: "WaxBrew Textura - Reviews"
       });
-      gtag("event", "view_reviews", {
-        event_category: "redirect",
-        event_label: "textura_reviews",
-        redirect_target: "google_maps",
-        event_callback: function () {
-          window.location.href = targetUrl;
-        },
-        event_timeout: 1000
-      });
-
-      setTimeout(function () {
-        window.location.href = targetUrl;
-      }, 1200);
     </script>
   </body>
 </html>
