@@ -51,8 +51,24 @@
     .tc-sub { color: var(--muted); font-size: 15px; margin-bottom: 24px; }
     .tc-hero {
       width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: center 60%;
       border-radius: var(--radius);
       margin-bottom: 20px;
+      display: block;
+    }
+    .tc-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .tc-gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: var(--radius);
       display: block;
     }
     .tc-map-btn {
@@ -158,8 +174,7 @@
     <p class="tc-sub" data-en="Specialty coffee inside the Tre Canne complex, Budva"
        data-sr="Specialty kafa u kompleksu Tre Canne, Budva">Specialty coffee inside the Tre Canne complex, Budva</p>
 
-    <!-- HERO PHOTO: заменить src, когда будет фото точки -->
-    <!-- <img class="tc-hero" src="/assets/tre-canne-hero.jpg" alt="WaxBrew Tre Canne"> -->
+    <img class="tc-hero" src="/assets/tre-canne-hero.jpg" alt="WaxBrew Tre Canne — coffee bar & vinyl">
 
     <a class="tc-map-btn" href="https://maps.app.goo.gl/RknVLk8suPuqHojz6" rel="noopener"
        onclick="gtag('event','click_location',{event_category:'navigation',event_label:'tre_canne_maps'})"
@@ -191,6 +206,11 @@
              data-sr="Potražite WaxBrew znak — dobrodošli!">Look for the WaxBrew sign — welcome in!</div>
         <!-- <img class="tc-step-photo" src="/assets/tre-canne-step3.jpg" alt="Step 3"> -->
       </div>
+    </div>
+
+    <div class="tc-gallery">
+      <img src="/assets/tre-canne-bar.jpg" alt="WaxBrew Tre Canne — bar counter" loading="lazy">
+      <img src="/assets/tre-canne-vinyl.jpg" alt="WaxBrew Tre Canne — vinyl corner" loading="lazy">
     </div>
 
     <div class="tc-footer">
