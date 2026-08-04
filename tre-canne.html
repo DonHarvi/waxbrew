@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
+  <link rel="canonical" href="https://waxbrew.com/tre-canne">
+  <title>WaxBrew Tre Canne — How to Find Us</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body { display: block; }
+    .tc-page {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+    .tc-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .tc-home {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .tc-home:hover { color: var(--text); }
+    .tc-lang button {
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 13px;
+      cursor: pointer;
+      padding: 4px 6px;
+    }
+    .tc-lang button.active { color: var(--gold); font-weight: 700; }
+    .tc-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #0e0e0e;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      padding: 4px 10px;
+      margin-bottom: 12px;
+    }
+    .tc-page h1 { font-size: 28px; margin-bottom: 6px; }
+    .tc-sub { color: var(--muted); font-size: 15px; margin-bottom: 24px; }
+    .tc-hero {
+      width: 100%;
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      display: block;
+    }
+    .tc-map-btn {
+      display: block;
+      text-align: center;
+      padding: 16px;
+      background: var(--gold);
+      color: #0e0e0e;
+      text-decoration: none;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 17px;
+      margin-bottom: 36px;
+      transition: opacity 0.2s;
+    }
+    .tc-map-btn:hover { opacity: 0.85; }
+    .tc-section-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .tc-step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .tc-step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #0e0e0e;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tc-step-body { flex: 1; }
+    .tc-step-text { font-size: 15px; line-height: 1.45; }
+    .tc-step-photo {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+      display: block;
+    }
+    .tc-footer {
+      margin-top: 36px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .tc-footer a { color: var(--gold); text-decoration: none; }
+  </style>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        el.textContent = lang === 'sr' ? (el.dataset.sr || el.dataset.en) : el.dataset.en;
+      });
+      document.querySelectorAll('.tc-lang button').forEach(function(btn) {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      localStorage.setItem('waxbrew-lang', lang);
+      document.documentElement.lang = lang;
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var saved   = localStorage.getItem('waxbrew-lang');
+      var browser = (navigator.language || '').toLowerCase();
+      var isSr    = browser.startsWith('sr') || browser.startsWith('hr') ||
+                    browser.startsWith('bs') || browser.startsWith('cnr');
+      setLang(saved || (isSr ? 'sr' : 'en'));
+    });
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMMNXCF8LX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PMMNXCF8LX', { page_title: 'WaxBrew Tre Canne', page_path: '/tre-canne' });
+  </script>
+</head>
+<body>
+  <main class="tc-page">
+    <div class="tc-top">
+      <a class="tc-home" href="/">← WaxBrew</a>
+      <div class="tc-lang">
+        <button data-lang="en" onclick="setLang('en')">EN</button>
+        <span style="color:var(--border)">|</span>
+        <button data-lang="sr" onclick="setLang('sr')">SR</button>
+      </div>
+    </div>
+
+    <div class="tc-badge" data-en="New location" data-sr="Nova lokacija">New location</div>
+    <h1>WaxBrew · Tre Canne</h1>
+    <p class="tc-sub" data-en="Specialty coffee inside the Tre Canne complex, Budva"
+       data-sr="Specialty kafa u kompleksu Tre Canne, Budva">Specialty coffee inside the Tre Canne complex, Budva</p>
+
+    <!-- HERO PHOTO: заменить src, когда будет фото точки -->
+    <!-- <img class="tc-hero" src="/assets/tre-canne-hero.jpg" alt="WaxBrew Tre Canne"> -->
+
+    <a class="tc-map-btn" href="https://maps.app.goo.gl/RknVLk8suPuqHojz6" rel="noopener"
+       onclick="gtag('event','click_location',{event_category:'navigation',event_label:'tre_canne_maps'})"
+       data-en="📍 Get Directions" data-sr="📍 Kako doći">📍 Get Directions</a>
+
+    <div class="tc-section-title" data-en="How to find us inside" data-sr="Kako nas naći unutra">How to find us inside</div>
+
+    <!-- ШАГИ-ЗАГЛУШКИ: заменить тексты и добавить фото по маршруту -->
+    <div class="tc-step">
+      <div class="tc-step-num">1</div>
+      <div class="tc-step-body">
+        <div class="tc-step-text" data-en="Enter the Tre Canne complex from the main entrance."
+             data-sr="Uđite u kompleks Tre Canne kroz glavni ulaz.">Enter the Tre Canne complex from the main entrance.</div>
+        <!-- <img class="tc-step-photo" src="/assets/tre-canne-step1.jpg" alt="Step 1"> -->
+      </div>
+    </div>
+    <div class="tc-step">
+      <div class="tc-step-num">2</div>
+      <div class="tc-step-body">
+        <div class="tc-step-text" data-en="Follow the passage — we are just ahead."
+             data-sr="Pratite prolaz — mi smo odmah ispred.">Follow the passage — we are just ahead.</div>
+        <!-- <img class="tc-step-photo" src="/assets/tre-canne-step2.jpg" alt="Step 2"> -->
+      </div>
+    </div>
+    <div class="tc-step">
+      <div class="tc-step-num">3</div>
+      <div class="tc-step-body">
+        <div class="tc-step-text" data-en="Look for the WaxBrew sign — welcome in!"
+             data-sr="Potražite WaxBrew znak — dobrodošli!">Look for the WaxBrew sign — welcome in!</div>
+        <!-- <img class="tc-step-photo" src="/assets/tre-canne-step3.jpg" alt="Step 3"> -->
+      </div>
+    </div>
+
+    <div class="tc-footer">
+      <span data-en="Specialty coffee & vinyl · " data-sr="Specialty kafa i vinil · ">Specialty coffee & vinyl · </span>
+      <a href="/loyalty/" data-en="Join WaxBrew Cup" data-sr="Pridruži se WaxBrew Cup">Join WaxBrew Cup</a>
+    </div>
+  </main>
+</body>
+</html>
