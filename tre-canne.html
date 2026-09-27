@@ -86,6 +86,21 @@
       transition: opacity 0.2s;
     }
     .tc-map-btn:hover { opacity: 0.85; }
+    .tc-review-btn {
+      display: block;
+      text-align: center;
+      padding: 14px;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 14px;
+      margin: -8px 0 20px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .tc-review-btn:hover { border-color: var(--cream); color: var(--cream); }
     .tc-section-title {
       font-size: 20px;
       font-weight: 700;
@@ -159,6 +174,10 @@
     <a class="tc-map-btn" href="https://maps.app.goo.gl/RknVLk8suPuqHojz6" rel="noopener"
        onclick="gtag('event','click_location',{event_category:'navigation',event_label:'tre_canne_maps'})"
        data-en="📍 Get Directions on Google Maps" data-sr="📍 Kako doći — Google Maps" data-ru="📍 Маршрут в Google Maps">📍 Get Directions on Google Maps</a>
+
+    <a class="tc-review-btn" href="https://maps.app.goo.gl/9kmv7xYBrUr5bHiz5" rel="noopener" target="_blank"
+       onclick="gtag('event','click_review',{event_category:'conversion',event_label:'google_review_tre_canne'})"
+       data-en="⭐ Leave a Review" data-sr="⭐ Ostavi recenziju" data-ru="⭐ Оставить отзыв">⭐ Leave a Review</a>
 
     <img class="tc-hero" src="/assets/tre-canne-hero.jpg" alt="WaxBrew Tre Canne — coffee bar & vinyl">
 
