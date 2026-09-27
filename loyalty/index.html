@@ -6,6 +6,8 @@
   <base href="/">
   <link rel="canonical" href="https://waxbrew.com/loyalty/">
   <title>WaxBrew — Программа лояльности</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="/style.css">
   <style>
     .back-link {
@@ -224,26 +226,7 @@
     
   </style>
 
-  <script>
-    function setLang(lang) {
-      document.querySelectorAll('[data-ru]').forEach(function(el) {
-        var val = lang === 'en' ? el.dataset.en : lang === 'me' ? (el.dataset.me || el.dataset.ru) : el.dataset.ru;
-        if (val !== undefined) el.innerHTML = val;
-      });
-      document.querySelectorAll('.lang-btn').forEach(function(btn) {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-      });
-      localStorage.setItem('waxbrew-lang', lang);
-      document.documentElement.lang = lang;
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-      var saved   = localStorage.getItem('waxbrew-lang');
-      var browser = (navigator.language || '').toLowerCase();
-      var isMe = browser.startsWith('sr') || browser.startsWith('hr') || browser.startsWith('bs') || browser.startsWith('cnr') || browser.startsWith('me');
-      var isRu = browser.startsWith('ru');
-      setLang(saved || (isRu ? 'ru' : isMe ? 'me' : 'en'));
-    });
-  </script>
+  <script src="/assets/analytics.js"></script>
 </head>
 <body>
 
@@ -255,14 +238,12 @@
         <div class="tagline"
           data-ru="программа лояльности"
           data-en="loyalty program"
-          data-me="program lojalnosti">программа лояльности</div>
+          data-sr="program lojalnosti">программа лояльности</div>
       </div>
       <div class="lang-switch">
-        <button class="lang-btn" data-lang="ru" onclick="setLang('ru')">RU</button>
-        <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
-        <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="me" onclick="setLang('me')">ME</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="sr">SR</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
       </div>
     </div>
   </header>
@@ -274,31 +255,31 @@
     <!-- How it works -->
     <section>
       <div class="section-head">
-        <h2 data-ru="Как это работает" data-en="How it works" data-me="Kako funkcioniše">Как это работает</h2>
+        <h2 data-ru="Как это работает" data-en="How it works" data-sr="Kako funkcioniše">Как это работает</h2>
       </div>
       <div class="steps">
 
         <div class="step">
           <div class="step-icon">📲</div>
           <div>
-            <h3 data-ru="Отсканируйте QR-код" data-en="Scan the QR code" data-me="Skenirajte QR kod">Отсканируйте QR-код</h3>
-            <p data-ru="Автоматическая регистрация — займёт секунду" data-en="Automatic registration — takes a second" data-me="Automatska registracija — traje sekundu">Автоматическая регистрация — займёт секунду</p>
+            <h3 data-ru="Отсканируйте QR-код" data-en="Scan the QR code" data-sr="Skenirajte QR kod">Отсканируйте QR-код</h3>
+            <p data-ru="Автоматическая регистрация — займёт секунду" data-en="Automatic registration — takes a second" data-sr="Automatska registracija — traje sekundu">Автоматическая регистрация — займёт секунду</p>
           </div>
         </div>
 
         <div class="step">
           <div class="step-icon">☕</div>
           <div>
-            <h3 data-ru="Отметьте визит" data-en="Check in your visit" data-me="Zabilježite posjet">Отметьте визит</h3>
-            <p data-ru="Назовите бариста 4 последние цифры номера телефона или нажмите «Отметить визит» в вашей карте — бариста учтёт ваши напитки и покупки" data-en="Give the barista the last 4 digits of your phone or tap 'Check In' in your card — the barista will log your drinks and purchases" data-me="Recite baristy posljednje 4 cifre vašeg broja telefona ili pritisnite 'Zabilježi posjet' u vašoj kartici — baristu će zabilježiti vaše napitke i kupovine">Назовите бариста 4 последние цифры номера телефона или нажмите «Отметить визит» в вашей карте — бариста учтёт ваши напитки и покупки</p>
+            <h3 data-ru="Отметьте визит" data-en="Check in your visit" data-sr="Zabilježite posjet">Отметьте визит</h3>
+            <p data-ru="Назовите бариста 4 последние цифры номера телефона или нажмите «Отметить визит» в вашей карте — бариста учтёт ваши напитки и покупки" data-en="Give the barista the last 4 digits of your phone or tap 'Check In' in your card — the barista will log your drinks and purchases" data-sr="Recite baristy posljednje 4 cifre vašeg broja telefona ili pritisnite 'Zabilježi posjet' u vašoj kartici — baristu će zabilježiti vaše napitke i kupovine">Назовите бариста 4 последние цифры номера телефона или нажмите «Отметить визит» в вашей карте — бариста учтёт ваши напитки и покупки</p>
           </div>
         </div>
 
         <div class="step">
           <div class="step-icon">🎁</div>
           <div>
-            <h3 data-ru="Получайте подарки" data-en="Claim your rewards" data-me="Preuzmite nagrade">Получайте подарки</h3>
-            <p data-ru="Пейте кофе в кофейне бесплатно и забирайте подарки домой" data-en="Enjoy free coffee at the café and take gifts home" data-me="Pijte kafu u kafeu besplatno i nosite nagrade kući">Пейте кофе в кофейне бесплатно и забирайте подарки домой</p>
+            <h3 data-ru="Получайте подарки" data-en="Claim your rewards" data-sr="Preuzmite nagrade">Получайте подарки</h3>
+            <p data-ru="Пейте кофе в кофейне бесплатно и забирайте подарки домой" data-en="Enjoy free coffee at the café and take gifts home" data-sr="Pijte kafu u kafeu besplatno i nosite nagrade kući">Пейте кофе в кофейне бесплатно и забирайте подарки домой</p>
           </div>
         </div>
 
@@ -308,8 +289,8 @@
     <!-- Tiers -->
     <section>
       <div class="section-head">
-        <h2 data-ru="Статусы" data-en="Status tiers" data-me="Statusi">Статусы</h2>
-        <p data-ru="Чем больше пьёте — тем больше получаете" data-en="The more you drink, the more you earn" data-me="Što više pijete — više zarađujete">Чем больше пьёте — тем больше получаете</p>
+        <h2 data-ru="Статусы" data-en="Status tiers" data-sr="Statusi">Статусы</h2>
+        <p data-ru="Чем больше пьёте — тем больше получаете" data-en="The more you drink, the more you earn" data-sr="Što više pijete — više zarađujete">Чем больше пьёте — тем больше получаете</p>
       </div>
 
       <div class="tier-path">
@@ -328,20 +309,20 @@
         <div class="tier-card">
           <div class="tier-header">
             <div class="tier-name tier-name--standard">📋 Standard</div>
-            <div class="tier-badge" data-ru="начальный статус" data-en="starting tier" data-me="početni status">начальный статус</div>
+            <div class="tier-badge" data-ru="начальный статус" data-en="starting tier" data-sr="početni status">начальный статус</div>
           </div>
           <div class="perks">
             <div class="perk">
               <span class="perk-icon">☕</span>
-              <span class="perk-main" data-ru="Каждые 5 чашек → кофе в подарок" data-en="Every 5 cups → free coffee" data-me="Svakih 5 šoljica → kafa na poklon">Каждые 5 чашек → кофе в подарок</span>
+              <span class="perk-main" data-ru="Каждые 5 чашек → кофе в подарок" data-en="Every 5 cups → free coffee" data-sr="Svakih 5 šoljica → kafa na poklon">Каждые 5 чашек → кофе в подарок</span>
             </div>
             <div class="perk">
               <span class="perk-icon">●</span>
-              <span class="perk-main" data-ru="Каждые 5 пачек зерна → пачка в подарок" data-en="Every 5 bags of beans → free bag" data-me="Svakih 5 paketa zrna → paket na poklon">Каждые 5 пачек зерна → пачка в подарок</span>
+              <span class="perk-main" data-ru="Каждые 5 пачек зерна → пачка в подарок" data-en="Every 5 bags of beans → free bag" data-sr="Svakih 5 paketa zrna → paket na poklon">Каждые 5 пачек зерна → пачка в подарок</span>
             </div>
             <div class="perk">
               <span class="perk-icon">◎</span>
-              <span class="perk-main" data-ru="Каждые 5 пластинок → пластинка в подарок" data-en="Every 5 vinyl records → free record" data-me="Svakih 5 ploča → ploča na poklon">Каждые 5 пластинок → пластинка в подарок</span>
+              <span class="perk-main" data-ru="Каждые 5 пластинок → пластинка в подарок" data-en="Every 5 vinyl records → free record" data-sr="Svakih 5 ploča → ploča na poklon">Каждые 5 пластинок → пластинка в подарок</span>
             </div>
           </div>
         </div>
@@ -350,30 +331,30 @@
         <div class="tier-card tier-card--local">
           <div class="tier-header">
             <div class="tier-name tier-name--local">🔥 Local</div>
-            <div class="tier-badge" data-ru="после 30 чашек" data-en="after 30 cups" data-me="nakon 30 šoljica">после 30 чашек</div>
+            <div class="tier-badge" data-ru="после 30 чашек" data-en="after 30 cups" data-sr="nakon 30 šoljica">после 30 чашек</div>
           </div>
           <div class="perks">
             <div class="perk">
               <span class="perk-icon">☕</span>
-              <span class="perk-main" data-ru="Каждые 4 чашки → кофе в подарок" data-en="Every 4 cups → free coffee" data-me="Svake 4 šoljice → kafa na poklon">Каждые 4 чашки → кофе в подарок</span>
+              <span class="perk-main" data-ru="Каждые 4 чашки → кофе в подарок" data-en="Every 4 cups → free coffee" data-sr="Svake 4 šoljice → kafa na poklon">Каждые 4 чашки → кофе в подарок</span>
             </div>
             <div class="perk">
               <span class="perk-icon">●</span>
-              <span class="perk-main" data-ru="Каждые 5 пачек зерна → пачка в подарок" data-en="Every 5 bags of beans → free bag" data-me="Svakih 5 paketa zrna → paket na poklon">Каждые 5 пачек зерна → пачка в подарок</span>
+              <span class="perk-main" data-ru="Каждые 5 пачек зерна → пачка в подарок" data-en="Every 5 bags of beans → free bag" data-sr="Svakih 5 paketa zrna → paket na poklon">Каждые 5 пачек зерна → пачка в подарок</span>
             </div>
             <div class="perk">
               <span class="perk-icon">◎</span>
-              <span class="perk-main" data-ru="Каждые 5 пластинок → пластинка в подарок" data-en="Every 5 vinyl records → free record" data-me="Svakih 5 ploča → ploča na poklon">Каждые 5 пластинок → пластинка в подарок</span>
+              <span class="perk-main" data-ru="Каждые 5 пластинок → пластинка в подарок" data-en="Every 5 vinyl records → free record" data-sr="Svakih 5 ploča → ploča na poklon">Каждые 5 пластинок → пластинка в подарок</span>
             </div>
             <div class="perk">
               <span class="perk-icon">🍽</span>
-              <span class="perk-main" data-ru="−10% скидка на еду" data-en="−10% food discount" data-me="−10% popust na hranu">−10% скидка на еду</span>
+              <span class="perk-main" data-ru="−10% скидка на еду" data-en="−10% food discount" data-sr="−10% popust na hranu">−10% скидка на еду</span>
             </div>
           </div>
           <div class="tier-unlock"
             data-ru="Открывается автоматически после <strong>30 чашек кофе</strong>"
             data-en="Unlocks automatically after <strong>30 coffees</strong>"
-            data-me="Otvara se automatski nakon <strong>30 šoljica kafe</strong>">
+            data-sr="Otvara se automatski nakon <strong>30 šoljica kafe</strong>">
             Открывается автоматически после <strong>30 чашек кофе</strong>
           </div>
         </div>
@@ -382,30 +363,30 @@
         <div class="tier-card tier-card--premium">
           <div class="tier-header">
             <div class="tier-name tier-name--premium">⭐ Premium</div>
-            <div class="tier-badge" data-ru="за покупки" data-en="earned by purchases" data-me="za kupovine">за покупки</div>
+            <div class="tier-badge" data-ru="за покупки" data-en="earned by purchases" data-sr="za kupovine">за покупки</div>
           </div>
           <div class="perks">
             <div class="perk">
               <span class="perk-icon">☕</span>
-              <span class="perk-main" data-ru="Каждые 4 чашки → кофе в подарок" data-en="Every 4 cups → free coffee" data-me="Svake 4 šoljice → kafa na poklon">Каждые 4 чашки → кофе в подарок</span>
+              <span class="perk-main" data-ru="Каждые 4 чашки → кофе в подарок" data-en="Every 4 cups → free coffee" data-sr="Svake 4 šoljice → kafa na poklon">Каждые 4 чашки → кофе в подарок</span>
             </div>
             <div class="perk">
               <span class="perk-icon">●</span>
-              <span class="perk-main" data-ru="Каждые 4 пачки зерна → пачка в подарок" data-en="Every 4 bags of beans → free bag" data-me="Svakih 4 paketa zrna → paket na poklon">Каждые 4 пачки зерна → пачка в подарок</span>
+              <span class="perk-main" data-ru="Каждые 4 пачки зерна → пачка в подарок" data-en="Every 4 bags of beans → free bag" data-sr="Svakih 4 paketa zrna → paket na poklon">Каждые 4 пачки зерна → пачка в подарок</span>
             </div>
             <div class="perk">
               <span class="perk-icon">◎</span>
-              <span class="perk-main" data-ru="Каждые 4 пластинки → пластинка в подарок" data-en="Every 4 vinyl records → free record" data-me="Svakih 4 ploče → ploča na poklon">Каждые 4 пластинки → пластинка в подарок</span>
+              <span class="perk-main" data-ru="Каждые 4 пластинки → пластинка в подарок" data-en="Every 4 vinyl records → free record" data-sr="Svakih 4 ploče → ploča na poklon">Каждые 4 пластинки → пластинка в подарок</span>
             </div>
             <div class="perk">
               <span class="perk-icon">🍽</span>
-              <span class="perk-main" data-ru="−20% скидка на еду" data-en="−20% food discount" data-me="−20% popust na hranu">−20% скидка на еду</span>
+              <span class="perk-main" data-ru="−20% скидка на еду" data-en="−20% food discount" data-sr="−20% popust na hranu">−20% скидка на еду</span>
             </div>
           </div>
           <div class="tier-unlock"
             data-ru="Открывается при статусе Local + <strong>3 пачки зерна</strong> + <strong>1 пластинка</strong>"
             data-en="Unlocks at Local tier + <strong>3 bags of beans</strong> + <strong>1 vinyl record</strong>"
-            data-me="Otvara se na Local statusu + <strong>3 paketa zrna</strong> + <strong>1 vinil ploča</strong>">
+            data-sr="Otvara se na Local statusu + <strong>3 paketa zrna</strong> + <strong>1 vinil ploča</strong>">
             Открывается при статусе Local + <strong>3 пачки зерна</strong> + <strong>1 пластинка</strong>
           </div>
         </div>
@@ -414,46 +395,46 @@
         <div class="tier-card tier-card--member">
           <div class="tier-header">
             <div class="tier-name tier-name--member">🎟 Member</div>
-            <div class="tier-badge" data-ru="100€ / год" data-en="100€ / year" data-me="100€ / godina">100€ / год</div>
+            <div class="tier-badge" data-ru="100€ / год" data-en="100€ / year" data-sr="100€ / godina">100€ / год</div>
           </div>
           <div class="perks">
             <div class="perk">
               <span class="perk-icon">☕</span>
-              <span class="perk-main" data-ru="Каждые 4 чашки → кофе в подарок" data-en="Every 4 cups → free coffee" data-me="Svake 4 šoljice → kafa na poklon">Каждые 4 чашки → кофе в подарок</span>
+              <span class="perk-main" data-ru="Каждые 4 чашки → кофе в подарок" data-en="Every 4 cups → free coffee" data-sr="Svake 4 šoljice → kafa na poklon">Каждые 4 чашки → кофе в подарок</span>
             </div>
             <div class="perk">
               <span class="perk-icon">●</span>
-              <span class="perk-main" data-ru="Каждые 4 пачки зерна → пачка в подарок" data-en="Every 4 bags of beans → free bag" data-me="Svakih 4 paketa zrna → paket na poklon">Каждые 4 пачки зерна → пачка в подарок</span>
+              <span class="perk-main" data-ru="Каждые 4 пачки зерна → пачка в подарок" data-en="Every 4 bags of beans → free bag" data-sr="Svakih 4 paketa zrna → paket na poklon">Каждые 4 пачки зерна → пачка в подарок</span>
             </div>
             <div class="perk">
               <span class="perk-icon">◎</span>
-              <span class="perk-main" data-ru="Каждые 4 пластинки → пластинка в подарок" data-en="Every 4 vinyl records → free record" data-me="Svakih 4 ploče → ploča na poklon">Каждые 4 пластинки → пластинка в подарок</span>
+              <span class="perk-main" data-ru="Каждые 4 пластинки → пластинка в подарок" data-en="Every 4 vinyl records → free record" data-sr="Svakih 4 ploče → ploča na poklon">Каждые 4 пластинки → пластинка в подарок</span>
             </div>
             <div class="perk">
               <span class="perk-icon">🍽</span>
-              <span class="perk-main" data-ru="−20% скидка на еду" data-en="−20% food discount" data-me="−20% popust na hranu">−20% скидка на еду</span>
+              <span class="perk-main" data-ru="−20% скидка на еду" data-en="−20% food discount" data-sr="−20% popust na hranu">−20% скидка на еду</span>
             </div>
             <div class="perk">
               <span class="perk-icon">☕</span>
-              <span class="perk-main" data-ru="Приглашения на закрытые каппинги" data-en="Invitations to private cupping events" data-me="Pozivnice na zatvorene cupping evenте">Приглашения на закрытые каппинги</span>
+              <span class="perk-main" data-ru="Приглашения на закрытые каппинги" data-en="Invitations to private cupping events" data-sr="Pozivnice na zatvorene cupping evenте">Приглашения на закрытые каппинги</span>
             </div>
             <div class="perk">
               <span class="perk-icon">🫘</span>
-              <span class="perk-main" data-ru="Ранний доступ к новым зёрнам обжарки" data-en="Early access to new roast releases" data-me="Rani pristup novim zrnima pržionice">Ранний доступ к новым зёрнам обжарки</span>
+              <span class="perk-main" data-ru="Ранний доступ к новым зёрнам обжарки" data-en="Early access to new roast releases" data-sr="Rani pristup novim zrnima pržionice">Ранний доступ к новым зёрнам обжарки</span>
             </div>
             <div class="perk">
               <span class="perk-icon">◎</span>
-              <span class="perk-main" data-ru="Ранний доступ к новым пластинкам" data-en="Early access to new vinyl arrivals" data-me="Rani pristup novim pločama">Ранний доступ к новым пластинкам</span>
+              <span class="perk-main" data-ru="Ранний доступ к новым пластинкам" data-en="Early access to new vinyl arrivals" data-sr="Rani pristup novim pločama">Ранний доступ к новым пластинкам</span>
             </div>
             <div class="perk">
               <span class="perk-icon">🎁</span>
-              <span class="perk-main" data-ru="Подарок при вступлении: пачка зерна + пластинка" data-en="Joining gift: 1 bag of beans + 1 vinyl record" data-me="Poklon pri učlanjenju: 1 paket zrna + 1 vinil ploča">Подарок при вступлении: пачка зерна + пластинка</span>
+              <span class="perk-main" data-ru="Подарок при вступлении: пачка зерна + пластинка" data-en="Joining gift: 1 bag of beans + 1 vinyl record" data-sr="Poklon pri učlanjenju: 1 paket zrna + 1 vinil ploča">Подарок при вступлении: пачка зерна + пластинка</span>
             </div>
           </div>
           <div class="tier-unlock"
             data-ru="Ежегодный взнос <strong>100€</strong> — оформляется у бариста или администратора"
             data-en="Annual fee <strong>100€</strong> — sign up with the barista or admin"
-            data-me="Godišnja članarina <strong>100€</strong> — registracija kod baristu ili administratora">
+            data-sr="Godišnja članarina <strong>100€</strong> — registracija kod baristu ili administratora">
             Ежегодный взнос <strong>100€</strong> — оформляется у бариста или администратора
           </div>
         </div>
@@ -464,7 +445,7 @@
 
     <!-- CTA -->
     <div class="cta-section">
-      <div class="cta-label" data-ru="Присоединиться к программе" data-en="Join the program" data-me="Pridruži se programu">Присоединиться к программе</div>
+      <div class="cta-label" data-ru="Присоединиться к программе" data-en="Join the program" data-sr="Pridruži se programu">Присоединиться к программе</div>
       <div class="platform-btns">
 
         <a class="platform-btn platform-btn--tg" href="https://t.me/waxcupbot" target="_blank" rel="noopener">
@@ -483,5 +464,6 @@
     <span>WaxBrew © 2026 · waxbrew.com</span>
   </footer>
 
+  <script src="/assets/i18n.js"></script>
 </body>
 </html>

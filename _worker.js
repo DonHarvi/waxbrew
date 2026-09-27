@@ -12,10 +12,22 @@ export default {
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://waxbrew.com/menu</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://waxbrew.com/loyalty/</loc>
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://waxbrew.com/team</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://waxbrew.com/reviews/</loc>

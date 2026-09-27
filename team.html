@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
+  <link rel="canonical" href="https://waxbrew.com/team">
+  <title>WaxBrew Team</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/assets/analytics.js"></script>
+</head>
+<body>
+
+  <div class="page-top">
+    <a class="home-link" href="/">← WaxBrew</a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="sr">SR</button>
+      <button class="lang-btn" data-lang="ru">RU</button>
+    </div>
+  </div>
+
+  <header class="hero" style="padding-top:24px;padding-bottom:8px;">
+    <div class="hero-content">
+      <div class="tagline" data-en="WaxBrew" data-sr="WaxBrew" data-ru="WaxBrew">WaxBrew</div>
+      <div class="logo" style="font-size:28px" data-en="The People Behind the Counter" data-sr="Ljudi iza šanka" data-ru="Люди за стойкой">The People Behind the Counter</div>
+      <div style="font-size:13px;color:var(--muted)" data-en="The hands that pull your espresso and pick today's vinyl." data-sr="Ruke koje prave tvoj espreso i biraju današnji vinil." data-ru="Руки, которые готовят твой эспрессо и выбирают сегодняшний винил.">The hands that pull your espresso and pick today's vinyl.</div>
+    </div>
+  </header>
+
+  <main>
+
+    <!--
+      Заготовка секции команды. Как заполнить реальными людьми:
+      1. Замени team-avatar на <img src="assets/team-<имя>.jpg" ...> с реальным фото (квадратное, лицо по центру).
+      2. Впиши имя, роль и короткую цитату/факт о человеке (1 предложение).
+      3. Добавь или убери .team-card по числу сотрудников.
+    -->
+    <section class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">☕</div>
+        <div>
+          <div class="team-name" data-en="Name Surname" data-sr="Ime Prezime" data-ru="Имя Фамилия">Name Surname</div>
+          <div class="team-role" data-en="Head Barista" data-sr="Glavni barista" data-ru="Старший бариста">Head Barista</div>
+          <div class="team-bio" data-en="Photo &amp; bio coming soon." data-sr="Fotografija i bio uskoro." data-ru="Фото и рассказ скоро появятся.">Photo &amp; bio coming soon.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">◉</div>
+        <div>
+          <div class="team-name" data-en="Name Surname" data-sr="Ime Prezime" data-ru="Имя Фамилия">Name Surname</div>
+          <div class="team-role" data-en="Vinyl Curator" data-sr="Kustos vinila" data-ru="Куратор винила">Vinyl Curator</div>
+          <div class="team-bio" data-en="Photo &amp; bio coming soon." data-sr="Fotografija i bio uskoro." data-ru="Фото и рассказ скоро появятся.">Photo &amp; bio coming soon.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">★</div>
+        <div>
+          <div class="team-name" data-en="Name Surname" data-sr="Ime Prezime" data-ru="Имя Фамилия">Name Surname</div>
+          <div class="team-role" data-en="Owner" data-sr="Vlasnik" data-ru="Владелец">Owner</div>
+          <div class="team-bio" data-en="Photo &amp; bio coming soon." data-sr="Fotografija i bio uskoro." data-ru="Фото и рассказ скоро появятся.">Photo &amp; bio coming soon.</div>
+        </div>
+      </div>
+    </section>
+
+    <a class="social-btn" href="https://www.instagram.com/waxbrew/" target="_blank" rel="noopener"
+       data-en="Say hi on Instagram" data-sr="Pozdravi se na Instagramu" data-ru="Поздоровайся в Instagram">Say hi on Instagram</a>
+
+  </main>
+
+  <footer>
+    <div class="runout"><span>⊙</span> WAXBREW · BUDVA MNE</div>
+    <div class="copyright">WaxBrew © 2026</div>
+  </footer>
+
+  <script src="/assets/i18n.js"></script>
+</body>
+</html>

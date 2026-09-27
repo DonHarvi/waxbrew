@@ -1,57 +1,32 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="/">
   <link rel="canonical" href="https://waxbrew.com/">
   <title>WaxBrew — specialty coffee & vinyl</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="/style.css">
-
-  <!-- i18n -->
-  <script>
-    function setLang(lang) {
-      document.querySelectorAll('[data-en]').forEach(function(el) {
-        el.textContent = lang === 'sr' ? (el.dataset.sr || el.dataset.en) : el.dataset.en;
-      });
-      document.querySelectorAll('.lang-btn').forEach(function(btn) {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-      });
-      localStorage.setItem('waxbrew-lang', lang);
-      document.documentElement.lang = lang;
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-      var saved   = localStorage.getItem('waxbrew-lang');
-      var browser = (navigator.language || '').toLowerCase();
-      var isSr    = browser.startsWith('sr') || browser.startsWith('hr') ||
-                    browser.startsWith('bs') || browser.startsWith('cnr');
-      setLang(saved || (isSr ? 'sr' : 'en'));
-    });
-  </script>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMMNXCF8LX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PMMNXCF8LX', { page_title: 'WaxBrew — Home', page_path: '/' });
-  </script>
+  <script src="/assets/analytics.js"></script>
 </head>
 <body>
 
   <!-- Hero -->
-  <header class="hero">
+  <header class="hero hero--photo" style="--hero-img:url(gallery-vinyl-coffee.png)">
     <div class="hero-content">
-      <img class="hero-logo" src="logo.png" alt="WaxBrew logo">
+      <div class="label-badge">
+        <img src="logo.png" alt="WaxBrew">
+      </div>
       <div>
-        <div class="logo">WaxBrew ✓</div>
-        <div class="tagline">specialty coffee & vinyl · Budva</div>
+        <div class="logo">WaxBrew</div>
+        <div class="tagline" data-en="Specialty Coffee &amp; Vinyl · Budva" data-sr="Specialty kafa i vinil · Budva" data-ru="Спешелти кофе и винил · Будва">Specialty Coffee &amp; Vinyl · Budva</div>
       </div>
       <div class="lang-switch">
-        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
-        <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="sr" onclick="setLang('sr')">SR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="sr">SR</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
       </div>
     </div>
   </header>
@@ -59,90 +34,89 @@
   <main>
 
     <!-- Locations -->
-    <section class="locations">
-      <a class="location-card" href="https://www.google.com/maps/place/WaxBrew+Specialty+Coffee+%26+Vinyl%2FTextura/@42.2893056,18.8324521,17z/data=!4m8!3m7!1s0x134dd5082f250a85:0x1e633dec97998383!8m2!3d42.2893056!4d18.835027!9m1!1b1!16s%2Fg%2F11kptdjz0k" rel="noopener" target="_blank"
-         style="background-image:url(log_textura1.webp)"
-         onclick="gtag('event','click_location',{event_category:'navigation',event_label:'textura'})">
-        <div class="location-card-overlay"></div>
-        <span class="location-name">Textura</span>
-        <span class="location-action" data-en="Map &amp; Reviews ↗" data-sr="Mapa i recenzije ↗">Map &amp; Reviews ↗</span>
-      </a>
-      <a class="location-card" href="https://www.google.com/maps/place/Bigwave+Budva" rel="noopener" target="_blank"
-         style="background-image:url(loc-bigwave.png)"
-         onclick="gtag('event','click_location',{event_category:'navigation',event_label:'bigwave'})">
-        <div class="location-card-overlay"></div>
-        <span class="location-name">Bigwave</span>
-        <span class="location-action" data-en="Opening Soon ↗" data-sr="Uskoro otvaranje ↗">Opening Soon ↗</span>
-      </a>
-      <a class="location-card" href="https://www.google.com/maps/place/WaxBrew+Lemonade+Rafailovici" rel="noopener" target="_blank"
-         style="background-image:url(loc-lemonade.png)"
-         onclick="gtag('event','click_location',{event_category:'navigation',event_label:'lemonade'})">
-        <div class="location-card-overlay"></div>
-        <span class="location-name">Lemonade</span>
-        <span class="location-action" data-en="Map &amp; Reviews ↗" data-sr="Mapa i recenzije ↗">Map &amp; Reviews ↗</span>
-      </a>
+    <section>
+      <div class="eyebrow"><span class="groove"><i></i></span><span data-en="Our Spots" data-sr="Naša mjesta" data-ru="Наши точки">Our Spots</span></div>
+      <div class="locations">
+        <a class="location-card" href="https://www.google.com/maps/place/WaxBrew+Specialty+Coffee+%26+Vinyl%2FTextura/@42.2893056,18.8324521,17z/data=!4m8!3m7!1s0x134dd5082f250a85:0x1e633dec97998383!8m2!3d42.2893056!4d18.835027!9m1!1b1!16s%2Fg%2F11kptdjz0k" rel="noopener" target="_blank"
+           style="background-image:url(log_textura1.webp)"
+           onclick="gtag('event','click_location',{event_category:'navigation',event_label:'textura'})">
+          <div class="location-card-overlay"></div>
+          <span class="location-track">A1</span>
+          <div>
+            <div class="location-name">Textura</div>
+            <span class="location-action" data-en="Map &amp; Reviews ↗" data-sr="Mapa i recenzije ↗" data-ru="Карта и отзывы ↗">Map &amp; Reviews ↗</span>
+          </div>
+        </a>
+        <a class="location-card" href="https://www.google.com/maps/place/Bigwave+Budva" rel="noopener" target="_blank"
+           style="background-image:url(loc-bigwave.png)"
+           onclick="gtag('event','click_location',{event_category:'navigation',event_label:'bigwave'})">
+          <div class="location-card-overlay"></div>
+          <span class="location-track">A2</span>
+          <div>
+            <div class="location-name">Bigwave</div>
+            <span class="location-action" data-en="Opening Soon ↗" data-sr="Uskoro otvaranje ↗" data-ru="Скоро открытие ↗">Opening Soon ↗</span>
+          </div>
+        </a>
+      </div>
     </section>
 
     <!-- Review CTA -->
     <a class="review-cta" href="https://g.page/r/CYODmZfsPWMeEBM/review" rel="noopener" target="_blank"
        onclick="gtag('event','click_review',{event_category:'conversion',event_label:'google_review'})">
-      <span data-en="⭐ Leave a Review" data-sr="⭐ Ostavi recenziju">⭐ Leave a Review</span>
+      <div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-label" data-en="Leave a Review" data-sr="Ostavi recenziju" data-ru="Оставить отзыв">Leave a Review</div>
+      </div>
       <span class="review-arrow">→</span>
     </a>
 
     <!-- WaxBrew Cup News Banner -->
     <a class="news-banner" href="/loyalty/"
        onclick="gtag('event','click_news',{event_category:'conversion',event_label:'waxcup_launch'})">
-      <div class="news-badge" data-en="New" data-sr="Novo">New</div>
+      <div class="news-badge" data-en="New" data-sr="Novo" data-ru="Ново">New</div>
       <div class="news-content">
         <div class="news-title">☕ WaxBrew Cup</div>
-        <div class="news-sub" data-en="Loyalty program — free coffee, beans &amp; vinyl" data-sr="Program lojalnosti — besplatna kafa, zrna i vinil">Loyalty program — free coffee, beans &amp; vinyl</div>
+        <div class="news-sub" data-en="Loyalty program — free coffee, beans &amp; vinyl" data-sr="Program lojalnosti — besplatna kafa, zrna i vinil" data-ru="Программа лояльности — бесплатный кофе, зёрна и винил">Loyalty program — free coffee, beans &amp; vinyl</div>
       </div>
       <span class="news-arrow">→</span>
     </a>
 
-    <!-- Promos -->
-    <section class="promos">
-      <a class="promo-card promo-happy-hours" href="/happy-hours"
-         onclick="gtag('event','click_promo',{event_category:'promo',event_label:'happy_hours'})">
-        <div class="promo-label">Coffee promo · Textura</div>
-        <div class="promo-title">Happy Hours: 20% Off</div>
-        <div class="promo-sub" data-en="14:00 – 16:00 daily" data-sr="14:00 – 16:00 svaki dan">14:00 – 16:00 daily</div>
-        <div class="promo-arrow">→</div>
-      </a>
-      <a class="promo-card promo-bigwave" href="https://www.google.com/maps/place/Bigwave+Budva" rel="noopener" target="_blank"
-         onclick="gtag('event','click_promo',{event_category:'promo',event_label:'bigwave_opening'})">
-        <div class="promo-label">New location</div>
-        <div class="promo-title">Bigwave — Opening Soon</div>
-        <div class="promo-sub" data-en="Stay tuned" data-sr="Pratite vijesti">Stay tuned</div>
-        <div class="promo-arrow">→</div>
-      </a>
-      <a class="promo-card promo-lemonade" href="/lemonade-togo"
-         onclick="gtag('event','click_promo',{event_category:'promo',event_label:'lemonade_togo'})">
-        <div class="promo-label">Coffee promo · Lemonade</div>
-        <div class="promo-title" data-en="20% Off To Go" data-sr="20% popusta na ponošenje">20% Off To Go</div>
-        <div class="promo-sub" data-en="All to-go orders" data-sr="Sve porudžbine za van">All to-go orders</div>
-        <div class="promo-arrow">→</div>
-      </a>
+    <!-- Today's Selects (promos) -->
+    <section>
+      <div class="eyebrow"><span class="groove"><i></i></span><span data-en="Today's Selects" data-sr="Današnji izbor" data-ru="Подборка дня">Today's Selects</span></div>
+      <div class="tracklist">
+        <a class="track-row" href="/happy-hours"
+           onclick="gtag('event','click_promo',{event_category:'promo',event_label:'happy_hours'})">
+          <span class="track-idx">A1</span>
+          <div class="track-main">
+            <div class="t-title" data-en="Happy Hours — 20% Off" data-sr="Happy Hours — 20% popusta" data-ru="Happy Hours — скидка 20%">Happy Hours — 20% Off</div>
+            <div class="t-sub" data-en="Coffee promo · Textura" data-sr="Kafa akcija · Textura" data-ru="Акция на кофе · Textura">Coffee promo · Textura</div>
+          </div>
+          <span class="track-time mono">14:00–16:00</span>
+        </a>
+        <a class="track-row" href="https://www.google.com/maps/place/Bigwave+Budva" rel="noopener" target="_blank"
+           onclick="gtag('event','click_promo',{event_category:'promo',event_label:'bigwave_opening'})">
+          <span class="track-idx">A2</span>
+          <div class="track-main">
+            <div class="t-title" data-en="Bigwave — Opening Soon" data-sr="Bigwave — uskoro otvaranje" data-ru="Bigwave — скоро открытие">Bigwave — Opening Soon</div>
+            <div class="t-sub" data-en="New location" data-sr="Nova lokacija" data-ru="Новая локация">New location</div>
+          </div>
+          <span class="track-time mono" data-en="soon" data-sr="uskoro" data-ru="скоро">soon</span>
+        </a>
+      </div>
     </section>
 
     <!-- Now Playing (hidden — playlist not configured yet) -->
-    <section class="now-playing-section" style="display:none">
-      <div class="section-header">
-        <div class="dot"></div>
-        <span data-en="Today at Bigwave" data-sr="Danas u Bigwave">Today at Bigwave</span>
-      </div>
+    <section class="now-playing" style="display:none">
+      <div class="eyebrow"><span class="groove"><i></i></span><span data-en="Today at Bigwave" data-sr="Danas u Bigwave" data-ru="Сегодня в Bigwave">Today at Bigwave</span></div>
       <div id="playlist" class="playlist">
         <div class="loading">Loading playlist…</div>
       </div>
     </section>
 
     <!-- WaxBrew Cup -->
-    <section class="waxcup-section">
-      <div class="section-header">
-        <div class="dot"></div>
-        <span data-en="Loyalty Program" data-sr="Program lojalnosti">Loyalty Program</span>
-      </div>
+    <section>
+      <div class="eyebrow"><span class="groove"><i></i></span><span data-en="Loyalty Program" data-sr="Program lojalnosti" data-ru="Программа лояльности">Loyalty Program</span></div>
       <a class="waxcup-card" href="/loyalty/"
          onclick="gtag('event','click_loyalty',{event_category:'conversion',event_label:'waxcup'})">
         <div class="waxcup-stamps">
@@ -154,23 +128,72 @@
         </div>
         <div class="waxcup-body">
           <div class="waxcup-name">WaxBrew Cup</div>
-          <div class="waxcup-title" data-en="Every 5 coffees → free coffee" data-sr="Svakih 5 kafa → kafa na poklon">Every 5 coffees → free coffee</div>
-          <div class="waxcup-sub" data-en="No app · join via Telegram" data-sr="Bez aplikacije · prijava putem Telegrama">No app · join via Telegram</div>
+          <div class="waxcup-title" data-en="Every 5 coffees → free coffee" data-sr="Svakih 5 kafa → kafa na poklon" data-ru="Каждые 5 кофе → кофе в подарок">Every 5 coffees → free coffee</div>
+          <div class="waxcup-sub" data-en="No app · join via Telegram" data-sr="Bez aplikacije · prijava putem Telegrama" data-ru="Без приложения · подключение через Telegram">No app · join via Telegram</div>
         </div>
         <span class="waxcup-arrow">→</span>
       </a>
     </section>
 
+    <!-- Menu highlights -->
+    <section>
+      <div class="eyebrow"><span class="groove"><i></i></span><span data-en="From the Menu" data-sr="Iz menija" data-ru="Из меню">From the Menu</span></div>
+      <div class="menu-list">
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">WAX Morning Duo</div>
+            <div class="menu-item-desc" data-en="Artisan panini &amp; cappuccino from our own roasted beans" data-sr="Panino &amp; kapućino od naših pečenih zrna" data-ru="Панини и капучино из кофе нашей обжарки">Artisan panini &amp; cappuccino from our own roasted beans</div>
+          </div>
+          <div class="menu-item-price">€8</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Raf Coffee</div>
+            <div class="menu-item-desc" data-en="Creamy, velvety — our specialty favorite" data-sr="Kremasta, baršunasta — naš specialty favorit" data-ru="Кремовый, бархатистый — наш фирменный фаворит">Creamy, velvety — our specialty favorite</div>
+          </div>
+          <div class="menu-item-price">€4</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Iced Latte</div>
+            <div class="menu-item-desc" data-en="Cold, smooth and refreshing milk coffee" data-sr="Hladna, glatka i osvježavajuća kafa s mlijekom" data-ru="Холодный, мягкий кофе с молоком">Cold, smooth and refreshing milk coffee</div>
+          </div>
+          <div class="menu-item-price">€5</div>
+        </div>
+      </div>
+      <a class="social-btn" href="/menu" onclick="gtag('event','click_menu',{event_category:'navigation',event_label:'full_menu'})" data-en="View Full Menu →" data-sr="Cijeli meni →" data-ru="Всё меню →">View Full Menu →</a>
+    </section>
+
+    <!-- Instagram -->
+    <section>
+      <div class="eyebrow"><span class="groove"><i></i></span><span>@waxbrew</span></div>
+      <div id="insta-grid" class="insta-grid"></div>
+      <a class="social-btn" href="https://www.instagram.com/waxbrew/" target="_blank" rel="noopener"
+         onclick="gtag('event','click_social',{event_category:'navigation',event_label:'instagram_follow'})"
+         data-en="Follow @waxbrew" data-sr="Prati @waxbrew" data-ru="Подписаться @waxbrew">Follow @waxbrew</a>
+    </section>
+
+    <!-- Team -->
+    <a class="waxcup-card" href="/team"
+       onclick="gtag('event','click_team',{event_category:'navigation',event_label:'team_page'})">
+      <div class="waxcup-stamps"><span class="team-avatar" style="width:44px;height:44px;font-size:16px">☕</span></div>
+      <div class="waxcup-body">
+        <div class="waxcup-name" data-en="The People" data-sr="Ljudi" data-ru="Люди">The People</div>
+        <div class="waxcup-title" data-en="Meet the WaxBrew team" data-sr="Upoznaj WaxBrew tim" data-ru="Знакомьтесь с командой WaxBrew">Meet the WaxBrew team</div>
+      </div>
+      <span class="waxcup-arrow">→</span>
+    </a>
+
     <!-- Gallery -->
     <div class="gallery">
       <img class="gallery-img" src="gallery-vinyl-coffee.png" alt="vinyl & coffee" loading="lazy">
-      <img class="gallery-img" src="gallery-sea.png"          alt="Lemonade sea view" loading="lazy">
       <img class="gallery-img" src="gallery-textura.png"      alt="Textura interior" loading="lazy">
+      <img class="gallery-img" src="assets/gallery-interior.webp" alt="WaxBrew interior" loading="lazy">
       <img class="gallery-img" src="hero.jpeg"                alt="WaxBrew sign" loading="lazy" style="object-position: 30% center">
     </div>
 
     <!-- Social -->
-    <div class="social-links">
+    <div class="row-2">
       <a class="social-btn" href="https://www.instagram.com/waxbrew/" rel="noopener" target="_blank"
          onclick="gtag('event','click_social',{event_category:'navigation',event_label:'instagram'})">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -190,21 +213,24 @@
     </div>
 
     <!-- Shop -->
-    <section class="shop">
+    <section>
       <a class="shop-card" href="https://www.discogs.com/seller/Wax.Brew/profile" target="_blank" rel="noopener"
          onclick="gtag('event','click_shop',{event_category:'conversion',event_label:'vinyl'})">
         <span class="shop-icon">◉</span>
-        <span class="shop-label" data-en="Vinyl Records" data-sr="Vinilne ploče">Vinyl Records</span>
-        <span class="shop-sub" data-en="shop on Discogs" data-sr="Discogs prodavnica">shop on Discogs</span>
+        <span class="shop-label" data-en="Vinyl Records" data-sr="Vinilne ploče" data-ru="Виниловые пластинки">Vinyl Records</span>
+        <span class="shop-sub" data-en="shop on Discogs" data-sr="Discogs prodavnica" data-ru="Магазин на Discogs">shop on Discogs</span>
       </a>
     </section>
 
   </main>
 
   <footer>
-    <span>WaxBrew © 2026 — Updated</span>
+    <div class="runout"><span>⊙</span> WAXBREW · BUDVA MNE · SIDE A</div>
+    <div class="copyright">WaxBrew © 2026</div>
   </footer>
 
+  <script src="/assets/i18n.js"></script>
+  <script src="/assets/instagram.js"></script>
   <script src="/script.js"></script>
 </body>
 </html>

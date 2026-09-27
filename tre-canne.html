@@ -6,6 +6,8 @@
   <base href="/">
   <link rel="canonical" href="https://waxbrew.com/tre-canne">
   <title>WaxBrew Tre Canne — How to Find Us</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="/style.css">
   <style>
     body { display: block; }
@@ -135,66 +137,42 @@
     .tc-footer a { color: var(--gold); text-decoration: none; }
   </style>
 
-  <script>
-    function setLang(lang) {
-      document.querySelectorAll('[data-en]').forEach(function(el) {
-        el.textContent = lang === 'sr' ? (el.dataset.sr || el.dataset.en) : el.dataset.en;
-      });
-      document.querySelectorAll('.tc-lang button').forEach(function(btn) {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-      });
-      localStorage.setItem('waxbrew-lang', lang);
-      document.documentElement.lang = lang;
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-      var saved   = localStorage.getItem('waxbrew-lang');
-      var browser = (navigator.language || '').toLowerCase();
-      var isSr    = browser.startsWith('sr') || browser.startsWith('hr') ||
-                    browser.startsWith('bs') || browser.startsWith('cnr');
-      setLang(saved || (isSr ? 'sr' : 'en'));
-    });
-  </script>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMMNXCF8LX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PMMNXCF8LX', { page_title: 'WaxBrew Tre Canne', page_path: '/tre-canne' });
-  </script>
+  <script src="/assets/analytics.js"></script>
 </head>
 <body>
   <main class="tc-page">
     <div class="tc-top">
       <a class="tc-home" href="/">← WaxBrew</a>
       <div class="tc-lang">
-        <button data-lang="en" onclick="setLang('en')">EN</button>
-        <span style="color:var(--border)">|</span>
-        <button data-lang="sr" onclick="setLang('sr')">SR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="sr">SR</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
       </div>
     </div>
 
-    <div class="tc-badge" data-en="New location" data-sr="Nova lokacija">New location</div>
+    <div class="tc-badge" data-en="New location" data-sr="Nova lokacija" data-ru="Новая локация">New location</div>
     <h1>WaxBrew · Tre Canne</h1>
     <p class="tc-sub" data-en="Specialty coffee inside the Tre Canne complex, Budva"
-       data-sr="Specialty kafa u kompleksu Tre Canne, Budva">Specialty coffee inside the Tre Canne complex, Budva</p>
+       data-sr="Specialty kafa u kompleksu Tre Canne, Budva"
+       data-ru="Спешелти кофе внутри комплекса Tre Canne, Будва">Specialty coffee inside the Tre Canne complex, Budva</p>
 
     <a class="tc-map-btn" href="https://maps.app.goo.gl/RknVLk8suPuqHojz6" rel="noopener"
        onclick="gtag('event','click_location',{event_category:'navigation',event_label:'tre_canne_maps'})"
-       data-en="📍 Get Directions on Google Maps" data-sr="📍 Kako doći — Google Maps">📍 Get Directions on Google Maps</a>
+       data-en="📍 Get Directions on Google Maps" data-sr="📍 Kako doći — Google Maps" data-ru="📍 Маршрут в Google Maps">📍 Get Directions on Google Maps</a>
 
     <img class="tc-hero" src="/assets/tre-canne-hero.jpg" alt="WaxBrew Tre Canne — coffee bar & vinyl">
 
-    <div class="tc-section-title" data-en="How to find us inside" data-sr="Kako nas naći unutra">How to find us inside</div>
+    <div class="tc-section-title" data-en="How to find us inside" data-sr="Kako nas naći unutra" data-ru="Как нас найти внутри">How to find us inside</div>
 
     <div class="tc-route-title" data-en="Option 1 · Through the main entrance (under 1 min)"
-         data-sr="Opcija 1 · Kroz glavni ulaz (manje od 1 min)">Option 1 · Through the main entrance (under 1 min)</div>
+         data-sr="Opcija 1 · Kroz glavni ulaz (manje od 1 min)"
+         data-ru="Вариант 1 · Через главный вход (меньше минуты)">Option 1 · Through the main entrance (under 1 min)</div>
     <div class="tc-step">
       <div class="tc-step-num">1</div>
       <div class="tc-step-body">
         <div class="tc-step-text" data-en="Enter through the main entrance of the Tre Canne complex."
-             data-sr="Uđite kroz glavni ulaz kompleksa Tre Canne.">Enter through the main entrance of the Tre Canne complex.</div>
+             data-sr="Uđite kroz glavni ulaz kompleksa Tre Canne."
+             data-ru="Войдите через главный вход комплекса Tre Canne.">Enter through the main entrance of the Tre Canne complex.</div>
         <img class="tc-step-photo" src="/assets/tre-canne-main-entrance.jpg" alt="Tre Canne main entrance" loading="lazy">
       </div>
     </div>
@@ -202,7 +180,8 @@
       <div class="tc-step-num">2</div>
       <div class="tc-step-body">
         <div class="tc-step-text" data-en="Just before the reception, turn left into the corridor."
-             data-sr="Neposredno prije recepcije skrenite lijevo u hodnik.">Just before the reception, turn left into the corridor.</div>
+             data-sr="Neposredno prije recepcije skrenite lijevo u hodnik."
+             data-ru="Не доходя до ресепшена, поверните налево в коридор.">Just before the reception, turn left into the corridor.</div>
         <img class="tc-step-photo" src="/assets/tre-canne-corridor.jpg" alt="Lobby — turn left before the reception" loading="lazy">
       </div>
     </div>
@@ -210,18 +189,20 @@
       <div class="tc-step-num">3</div>
       <div class="tc-step-body">
         <div class="tc-step-text" data-en="We are the last door on the right side of the corridor. Welcome in!"
-             data-sr="Mi smo posljednja vrata s desne strane hodnika. Dobrodošli!">We are the last door on the right side of the corridor. Welcome in!</div>
+             data-sr="Mi smo posljednja vrata s desne strane hodnika. Dobrodošli!"
+             data-ru="Мы — последняя дверь справа по коридору. Добро пожаловать!">We are the last door on the right side of the corridor. Welcome in!</div>
         <img class="tc-step-photo" src="/assets/tre-canne-door-corridor.jpg" alt="WaxBrew — last door on the right" loading="lazy">
       </div>
     </div>
 
     <div class="tc-route-title" data-en="Option 2 · From the courtyard"
-         data-sr="Opcija 2 · Iz dvorišta">Option 2 · From the courtyard</div>
+         data-sr="Opcija 2 · Iz dvorišta" data-ru="Вариант 2 · Со стороны двора">Option 2 · From the courtyard</div>
     <div class="tc-step">
       <div class="tc-step-num">1</div>
       <div class="tc-step-body">
         <div class="tc-step-text" data-en="From the courtyard, look for our WaxBrew sign on the glass — the complex entrance is right next to it."
-             data-sr="Iz dvorišta potražite naš WaxBrew znak na staklu — ulaz u kompleks je odmah pored.">From the courtyard, look for our WaxBrew sign on the glass — the complex entrance is right next to it.</div>
+             data-sr="Iz dvorišta potražite naš WaxBrew znak na staklu — ulaz u kompleks je odmah pored."
+             data-ru="Со двора ищите нашу вывеску WaxBrew на стекле — вход в комплекс прямо рядом.">From the courtyard, look for our WaxBrew sign on the glass — the complex entrance is right next to it.</div>
         <img class="tc-step-photo" src="/assets/tre-canne-yard-entrance.jpg" alt="WaxBrew sign seen from the courtyard" loading="lazy">
       </div>
     </div>
@@ -229,7 +210,7 @@
       <div class="tc-step-num">2</div>
       <div class="tc-step-body">
         <div class="tc-step-text" data-en="We are the first door on the left."
-             data-sr="Mi smo prva vrata s lijeve strane.">We are the first door on the left.</div>
+             data-sr="Mi smo prva vrata s lijeve strane." data-ru="Мы — первая дверь слева.">We are the first door on the left.</div>
         <img class="tc-step-photo" src="/assets/tre-canne-door-yard.jpg" alt="WaxBrew — first glass door on the left" loading="lazy">
       </div>
     </div>
@@ -240,9 +221,11 @@
     </div>
 
     <div class="tc-footer">
-      <span data-en="Specialty coffee & vinyl · " data-sr="Specialty kafa i vinil · ">Specialty coffee & vinyl · </span>
-      <a href="/loyalty/" data-en="Join WaxBrew Cup" data-sr="Pridruži se WaxBrew Cup">Join WaxBrew Cup</a>
+      <span data-en="Specialty coffee & vinyl · " data-sr="Specialty kafa i vinil · " data-ru="Спешелти кофе и винил · ">Specialty coffee & vinyl · </span>
+      <a href="/loyalty/" data-en="Join WaxBrew Cup" data-sr="Pridruži se WaxBrew Cup" data-ru="Вступить в WaxBrew Cup">Join WaxBrew Cup</a>
     </div>
   </main>
+
+  <script src="/assets/i18n.js"></script>
 </body>
 </html>
