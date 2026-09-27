@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
+  <title>WaxBrew — Track Not Found</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/assets/analytics.js"></script>
+  <script>gtag('event', 'view_404', { event_category: 'error', page_path: location.pathname });</script>
+  <style>
+    .nf-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 22px;
+      padding: 72px 20px 40px;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+    .nf-record {
+      position: relative;
+      width: 128px; height: 128px;
+      border-radius: 50%;
+      background: repeating-radial-gradient(circle at center, var(--surface-2) 0 2px, var(--bg) 2px 5px);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      animation: nf-spin 6s linear infinite;
+    }
+    .nf-record::before {
+      content: "";
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--cream);
+      border: 1px solid var(--border);
+    }
+    .nf-record::after {
+      content: "";
+      position: absolute;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--bg);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    @keyframes nf-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .nf-record { animation: none; } }
+
+    .nf-code { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: var(--gold); text-transform: uppercase; }
+    .nf-title { font-size: 26px; font-weight: 600; color: var(--cream); }
+    .nf-sub { font-size: 14.5px; color: var(--muted); line-height: 1.5; }
+    .nf-actions { display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 6px; }
+  </style>
+</head>
+<body>
+
+  <div class="page-top">
+    <a class="home-link" href="/">← WaxBrew</a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="sr">SR</button>
+      <button class="lang-btn" data-lang="ru">RU</button>
+    </div>
+  </div>
+
+  <main class="nf-wrap">
+    <div class="nf-record" aria-hidden="true"></div>
+    <div class="nf-code">404 · SIDE B</div>
+    <h1 class="nf-title" data-en="Looks like the needle skipped" data-sr="Izgleda da je igla preskočila" data-ru="Похоже, игла соскочила с дорожки">Looks like the needle skipped</h1>
+    <p class="nf-sub" data-en="This track isn't on the record anymore — the page moved or no longer exists." data-sr="Ova numera više nije na ploči — stranica je premještena ili više ne postoji." data-ru="Такого трека на пластинке больше нет — страница переехала или удалена.">This track isn't on the record anymore — the page moved or no longer exists.</p>
+
+    <div class="nf-actions">
+      <a class="promo-btn primary" href="/" data-en="Back to WaxBrew" data-sr="Nazad na WaxBrew" data-ru="Вернуться на WaxBrew">Back to WaxBrew</a>
+      <a class="promo-btn" href="/menu" data-en="View Menu" data-sr="Pogledaj meni" data-ru="Посмотреть меню">View Menu</a>
+      <a class="promo-btn" href="https://www.google.com/maps/place/WaxBrew+Specialty+Coffee+%26+Vinyl%2FTextura/@42.2893056,18.8324521,17z/data=!4m8!3m7!1s0x134dd5082f250a85:0x1e633dec97998383!8m2!3d42.2893056!4d18.835027!9m1!1b1!16s%2Fg%2F11kptdjz0k" rel="noopener" target="_blank" data-en="Find Us on the Map" data-sr="Pronađi nas na mapi" data-ru="Найти нас на карте">Find Us on the Map</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="runout"><span>⊙</span> WAXBREW · BUDVA MNE · SIDE B</div>
+  </footer>
+
+  <script src="/assets/i18n.js"></script>
+</body>
+</html>
