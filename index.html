@@ -93,6 +93,16 @@
       document.getElementById('breakfast-link').addEventListener('click', function () {
         var lang = window.WaxBrewI18n ? window.WaxBrewI18n.currentLang() : 'en';
         this.href = {en:'/all-day-breakfast/',ru:'/zavtrak/',sr:'/dorucak/'}[lang] || '/all-day-breakfast/';
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'click_breakfast', {
+            event_category: 'navigation',
+            event_label: 'all_day_breakfast',
+            language: lang,
+            placement: 'homepage_banner',
+            link_url: this.href,
+            transport_type: 'beacon'
+          });
+        }
       });
     </script>
 
