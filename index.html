@@ -81,6 +81,21 @@
       </a>
     </section>
 
+    <a class="news-banner" href="/all-day-breakfast/" id="breakfast-link">
+      <div class="news-badge" data-en="All day" data-sr="Cijelog dana" data-ru="Весь день">All day</div>
+      <div class="news-content">
+        <div class="news-title" data-en="Breakfast in Budva · €10" data-sr="Doručak u Budvi · 10 €" data-ru="Завтрак в Будве · 10 €">Breakfast in Budva · €10</div>
+        <div class="news-sub" data-en="Main dish + croissant + coffee + fresh orange juice" data-sr="Glavno jelo + kroasan + kafa + svježe cijeđeni sok od narandže" data-ru="Основное блюдо + круассан + кофе + апельсиновый фреш">Main dish + croissant + coffee + fresh orange juice</div>
+      </div>
+      <span class="news-arrow" aria-hidden="true">→</span>
+    </a>
+    <script>
+      document.getElementById('breakfast-link').addEventListener('click', function () {
+        var lang = window.WaxBrewI18n ? window.WaxBrewI18n.currentLang() : 'en';
+        this.href = {en:'/all-day-breakfast/',ru:'/zavtrak/',sr:'/dorucak/'}[lang] || '/all-day-breakfast/';
+      });
+    </script>
+
     <!-- WaxBrew Cup News Banner -->
     <a class="news-banner" href="/loyalty/"
        onclick="gtag('event','click_news',{event_category:'conversion',event_label:'waxcup_launch'})">
