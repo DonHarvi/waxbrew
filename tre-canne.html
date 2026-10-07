@@ -150,6 +150,7 @@
       color: var(--muted);
     }
     .tc-footer a { color: var(--gold); text-decoration: none; }
+      #how-to-find { scroll-margin-top: 20px; }
   </style>
 
   <script src="/assets/analytics.js"></script>
@@ -181,7 +182,7 @@
 
     <img class="tc-hero" src="/assets/tre-canne-hero.jpg" alt="WaxBrew Tre Canne — coffee bar & vinyl">
 
-    <div class="tc-section-title" data-en="How to find us inside" data-sr="Kako nas naći unutra" data-ru="Как нас найти внутри">How to find us inside</div>
+    <div class="tc-section-title" id="how-to-find" data-en="How to find us inside" data-sr="Kako nas naći unutra" data-ru="Как нас найти внутри">How to find us inside</div>
 
     <div class="tc-route-title" data-en="Option 1 · Through the main entrance (under 1 min)"
          data-sr="Opcija 1 · Kroz glavni ulaz (manje od 1 min)"
@@ -246,5 +247,13 @@
   </main>
 
   <script src="/assets/i18n.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var lang = new URLSearchParams(location.search).get('lang');
+      if (['en', 'ru', 'sr'].indexOf(lang) !== -1) {
+        window.WaxBrewI18n.setLang(lang);
+      }
+    });
+  </script>
 </body>
 </html>

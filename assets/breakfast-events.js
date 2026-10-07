@@ -20,6 +20,13 @@
         link_url: link.href,
         transport_type: 'beacon'
       });
+    } else if (link.classList.contains('inside-link')) {
+      track('click_find_inside', {
+        location_name: 'tre_canne',
+        placement: link.closest('.sticky') ? 'sticky' : link.closest('.loc') ? 'location' : 'hero',
+        link_url: link.href,
+        transport_type: 'beacon'
+      });
     } else if (link.matches('.cta, .loc a, .sticky a')) {
       track('click_directions', {
         location_name: 'tre_canne',
