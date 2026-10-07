@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doručak tokom cijelog dana u Budvi — komplet za 10 € | WaxBrew</title>
+<meta name="description" content="Doručak tokom cijelog dana u Budvi za 10 €: glavno jelo po izboru + kroasan + espreso, amerikano ili mali kapućino + svježe cijeđeni sok od narandže 250 ml. WaxBrew, Tre Canne.">
+
+<link rel="canonical" href="https://waxbrew.com/dorucak/">
+<link rel="alternate" hreflang="en" href="https://waxbrew.com/all-day-breakfast/">
+<link rel="alternate" hreflang="ru" href="https://waxbrew.com/zavtrak/">
+<link rel="alternate" hreflang="sr-Latn" href="https://waxbrew.com/dorucak/">
+<link rel="alternate" hreflang="x-default" href="https://waxbrew.com/all-day-breakfast/">
+<script src="/assets/analytics.js"></script>
+<style>
+  :root{
+    --cream:#F7F1E5; --ink:#1E1A16; --orange:#E8632B; --orange-d:#C94F1D;
+    --card:#FFFFFF; --muted:#6B6259; --line:#E8DFD0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Helvetica Neue",Arial,system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+
+  header{padding:18px 0;border-bottom:1px solid var(--line)}
+  .topbar{display:flex;align-items:center;justify-content:space-between}
+  .logo{font-weight:800;letter-spacing:.14em;font-size:18px}
+  .logo span{color:var(--orange)}
+  .badge{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:6px 12px;border-radius:999px}
+
+  .hero{padding:48px 0 32px;text-align:center}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+  h1{font-size:clamp(30px,6vw,44px);line-height:1.12;font-weight:800;margin-bottom:16px}
+  h1 em{font-style:normal;color:var(--orange)}
+  .hero p{font-size:17px;color:var(--muted);max-width:540px;margin:0 auto 22px}
+  .hero-inc{display:inline-block;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:12px 22px;font-size:15px;font-weight:600;margin:0 auto 26px;box-shadow:0 4px 14px rgba(30,26,22,.06)}
+  .hero-inc b{font-weight:800}
+  .cta{display:inline-block;background:var(--orange);color:#fff;font-weight:700;font-size:17px;padding:16px 36px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(232,99,43,.35);transition:transform .15s ease}
+  .cta:hover{background:var(--orange-d);transform:translateY(-2px)}
+  .sub-cta{margin-top:14px;font-size:15px;color:var(--muted)}
+  .sub-cta b{color:var(--orange);font-size:17px}
+  .stars{margin-top:22px;font-size:14px;color:var(--muted)}
+  .stars b{color:var(--ink)}
+  .hero-img{width:100%;border-radius:16px;margin-top:28px;display:block;box-shadow:0 8px 24px rgba(30,26,22,.10)}
+
+  .section{padding:24px 0 8px}
+  .section h2{font-size:22px;font-weight:800;text-align:center;margin-bottom:20px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;position:relative;transition:box-shadow .15s ease}
+  .card:hover{box-shadow:0 8px 24px rgba(30,26,22,.08)}
+  .card img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;margin-bottom:14px}
+  .tag{position:absolute;top:-10px;left:16px;background:var(--orange);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;z-index:2}
+  .card h3{font-size:17px;font-weight:800;margin-bottom:6px}
+  .card p{font-size:14px;color:var(--muted)}
+
+  .strip{background:var(--ink);color:var(--cream);margin:36px 0;border-radius:16px;padding:26px 24px;text-align:center}
+  .strip img{width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 14px;border:3px solid var(--orange);display:block}
+  .strip .big{font-size:clamp(26px,5vw,34px);font-weight:800;margin-bottom:6px}
+  .strip .big span{color:var(--orange)}
+  .strip p{font-size:14px;color:#B7AC9C}
+
+  .locs{padding:8px 0 40px}
+  .locs h2{font-size:22px;font-weight:800;text-align:center;margin-bottom:20px}
+  .loc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:14px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+  .loc h3{font-size:17px;font-weight:800}
+  .loc p{font-size:14px;color:var(--muted)}
+  .loc a{display:inline-block;font-size:14px;font-weight:700;color:var(--orange);text-decoration:none;border:2px solid var(--orange);padding:9px 18px;border-radius:999px;white-space:nowrap}
+  .loc a:hover{background:var(--orange);color:#fff}
+
+  footer{border-top:1px solid var(--line);padding:22px 0 90px;text-align:center;font-size:13px;color:var(--muted)}
+  footer a{color:var(--muted)}
+
+  .sticky{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:12px 16px;display:flex;gap:10px;z-index:50}
+  .sticky a{flex:1;text-align:center;font-weight:700;font-size:15px;padding:13px 0;border-radius:999px;text-decoration:none}
+  .sticky .primary{background:var(--orange);color:#fff}
+  @media(min-width:761px){.sticky{display:none}}
+  .strip .icons{display:flex;justify-content:center;gap:26px;margin-bottom:18px}
+  .strip .icon{font-size:13px;color:#B7AC9C}
+  .strip .icon span{display:block;font-size:34px;margin-bottom:6px}
+  .usp{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media(max-width:560px){.usp{grid-template-columns:1fr}}
+  .usp-item{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 16px;text-align:center}
+  .usp-item span{font-size:32px;display:block;margin-bottom:10px}
+  .usp-item b{display:block;font-size:15px;margin-bottom:6px}
+  .usp-item p{font-size:13px;color:var(--muted)}
+  .worknear{background:var(--orange);color:#fff;border-radius:16px;padding:26px 24px}
+  .worknear h2{color:#fff;margin:0 0 10px;text-align:left;font-size:21px}
+  .worknear p{font-size:15px;line-height:1.6;color:#fff}
+
+  .topbar{flex-wrap:wrap;gap:12px}
+  .logo{text-decoration:none;color:var(--ink)}
+  .lang-switch{display:flex;gap:8px;align-items:center}
+  .lang-switch a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:700;padding:6px 9px;border:1px solid var(--line);border-radius:8px}
+  .lang-switch a[aria-current="page"]{background:var(--ink);color:var(--cream)}
+  .lang-switch a:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+  .strip .icons{flex-wrap:wrap;gap:18px}
+  .inside-cta{margin-top:16px}
+  .inside-link{font-weight:700;color:var(--orange);text-underline-offset:4px}
+  .sticky .ghost{border:2px solid var(--orange);color:var(--orange)}
+  .sticky a{display:flex;align-items:center;justify-content:center;padding:11px 8px;line-height:1.3}
+  #how-to-find{scroll-margin-top:20px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap topbar">
+    <a class="logo" href="/" aria-label="WaxBrew">WAX<span>BREW</span></a>
+    <div class="badge">Cijelog dana · Svakog dana</div>
+    <nav class="lang-switch" aria-label="Jezik"><a href="/all-day-breakfast/" lang="en">EN</a><a href="/zavtrak/" lang="ru">RU</a><a href="/dorucak/" lang="sr-Latn" aria-current="page">SR</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Doručak tokom cijelog dana</div>
+    <h1>Doručak u Budvi <em>za 10 €</em></h1>
+    <p>Služimo doručak tokom cijelog dana, bez vremenskog ograničenja.</p>
+    <div class="hero-inc">Svaki doručak uključuje: <b>glavno jelo + veliki kroasan + espreso/amerikano ili mali kapućino + svježe cijeđeni sok od narandže</b></div><br>
+    <a class="cta" href="https://maps.app.goo.gl/RknVLk8suPuqHojz6" target="_blank" rel="noopener">Pronađi put</a>
+    <div class="inside-cta"><a class="inside-link" href="/tre-canne?lang=sr#how-to-find">Kako nas naći unutra</a></div>
+    <div class="sub-cta">Komplet — <b>10 €</b> · Otvoreno svakog dana od 7:30</div>
+    <div class="stars">★★★★★ <b>4.8</b> — ocjena više od 170 gostiju na Google mapama</div>
+    <img class="hero-img" src="/assets/breakfast/fc5e40f716aae4ff.jpg" alt="WaxBrew doručak tokom cijelog dana: granola, ovsena kaša, palačinke i sirniki" fetchpriority="high">
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Šta biraš danas?</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="/assets/breakfast/42c80c3c175fd9a9.jpg" alt="Granola sa jogurtom" loading="lazy">
+        <h3>Granola sa jogurtom</h3>
+        <p>Domaća granola iz naše kuhinje sa prirodnim jogurtom.</p>
+      </div>
+      <div class="card">
+        <img src="/assets/breakfast/4704e298191f62e3.jpg" alt="Ovsena kaša sa kruškom" loading="lazy">
+        <h3>Ovsena kaša sa kruškom</h3>
+        <p>Topla ovsena kaša sa karamelizovanom kruškom.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Popularno</div>
+        <img src="/assets/breakfast/d5efa26c13d9ed6b.jpg" alt="Sirniki sa kiselom pavlakom ili Nutellom" loading="lazy">
+        <h3>Sirniki</h3>
+        <p>Sa kiselom pavlakom ili Nutellom — po tvom izboru.</p>
+      </div>
+      <div class="card">
+        <img src="/assets/breakfast/5234371fee73c819.jpg" alt="Palačinke sa šunkom i sirom" loading="lazy">
+        <h3>Palačinke sa šunkom i sirom</h3>
+        <p>Zasitan klasik za svaki dan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Više od doručka</h2>
+    <div class="usp">
+      <div class="usp-item"><span>🍳</span><b>Naša kuhinja</b><p>Sve pripremamo sami, svakog jutra, od početka.</p></div>
+      <div class="usp-item"><span>☕</span><b>Naša pržionica</b><p>Kafu pržimo u Budvi — za espreso i filter.</p></div>
+      <div class="usp-item"><span>🎧</span><b>Vinil u lokalu</b><p>Doručak uz zvuk ploča — doživljaj koji ćeš pamtiti.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="worknear">
+      <h2>Radiš u blizini?</h2>
+      <p>Ako svakog dana u 11:00 ideš na ručak istim putem, sjutra probaj drugi. Kod nas se doručak služi cijelog dana — sirniki u 11:30 su sasvim dobra ideja. Probaj novo mjesto.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="strip">
+    <div class="icons"><div class="icon"><span><svg viewBox="0 0 48 48" width="38" height="38" xmlns="http://www.w3.org/2000/svg">
+  <path d="M7 33 Q10 15 24 14 Q38 15 41 33 Q33 24 24 24 Q15 24 7 33 Z" fill="#E8632B" stroke="none"/>
+  <path d="M15.5 19.5 Q16.2 22.2 17 25" stroke="#F7F1E5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M24 16.8 V24.6" stroke="#F7F1E5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M32.5 19.5 Q31.8 22.2 31 25" stroke="#F7F1E5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg></span>Kroasan 80 g</div><div class="icon"><span><svg viewBox="0 0 48 48" width="38" height="38" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12 20h20v8a9 9 0 0 1-9 9h-2a9 9 0 0 1-9-9z" stroke="#F7F1E5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M32 23h3a4.5 4.5 0 1 1 0 9h-3" stroke="#F7F1E5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <ellipse cx="22" cy="41.5" rx="13" ry="2.6" stroke="#F7F1E5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M22 26.2c-1.9-2.3-5.1-1.8-5.1.7 0 2 2.8 3.4 5.1 5 2.3-1.6 5.1-3 5.1-5 0-2.5-3.2-3-5.1-.7z" fill="#E8632B" stroke="none"/>
+</svg></span>Kapućino / amerikano</div><div class="icon"><span><svg viewBox="0 0 48 48" width="38" height="38" xmlns="http://www.w3.org/2000/svg">
+  <path d="M15.5 15.5h17l-2.4 23.5a3 3 0 0 1-3 2.7h-6.2a3 3 0 0 1-3-2.7z" stroke="#F7F1E5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M16.9 23.5h14.2l-1.9 15.3a3 3 0 0 1-3 2.7h-4.4a3 3 0 0 1-3-2.7z" fill="#E8632B" stroke="none"/>
+  <path d="M27.5 15 32.5 5.5" stroke="#F7F1E5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="14.5" cy="13.5" r="4.6" stroke="#E8632B" stroke-width="2.4" fill="none"/>
+  <path d="M11 10.5 18 16.5 M18 10.5 11 16.5" stroke="#E8632B" stroke-width="1.6" stroke-linecap="round"/>
+</svg></span>Svježe cijeđeni sok 250 ml</div></div>
+    <div class="big">Bilo koji izbor — <span>10 €</span></div>
+    <p>Jelo + veliki kroasan + espreso, amerikano ili mali kapućino + svježe cijeđeni sok od narandže</p>
+  </div>
+</section>
+
+<section class="locs">
+  <div class="wrap">
+    <h2>Pronađi nas u Budvi</h2>
+    <div class="loc">
+      <div>
+        <h3>Tre Canne</h3>
+        <p>Hotel Tre Canne, Budva · svakog dana 7:30–20:00</p>
+      </div>
+      <a href="https://maps.app.goo.gl/RknVLk8suPuqHojz6" target="_blank" rel="noopener">Pronađi put</a>
+      <a class="inside-link" href="/tre-canne?lang=sr#how-to-find">Kako nas naći unutra</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    WaxBrew — specialty kafa i vinil · Budva, Crna Gora<br>
+    <a href="https://waxbrew.com/" target="_blank" rel="noopener">waxbrew.com</a> ·
+    <a href="https://www.instagram.com/waxbrew/" target="_blank" rel="noopener">@waxbrew</a>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a class="primary" href="https://maps.app.goo.gl/RknVLk8suPuqHojz6" target="_blank" rel="noopener">Pronađi put</a>
+  <a class="inside-link ghost" href="/tre-canne?lang=sr#how-to-find">Nađi nas unutra</a>
+</div>
+
+<script src="/assets/breakfast-events.js"></script>
+</body>
+</html>
