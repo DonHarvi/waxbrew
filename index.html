@@ -106,6 +106,24 @@
       });
     </script>
 
+    <a class="news-banner" href="/events/" id="events-link">
+      <div class="news-badge" data-en="Events" data-sr="Događaji" data-ru="Выезд">Events</div>
+      <div class="news-content">
+        <div class="news-title" data-en="WaxBrew at your event" data-sr="WaxBrew na vašem događaju" data-ru="WaxBrew на вашем мероприятии">WaxBrew at your event</div>
+        <div class="news-sub" data-en="Mobile coffee bar &amp; catering across Montenegro" data-sr="Mobilni kafe-bar i ketering širom Crne Gore" data-ru="Выездной кофе-бар и кейтеринг по Черногории">Mobile coffee bar &amp; catering across Montenegro</div>
+      </div>
+      <span class="news-arrow" aria-hidden="true">→</span>
+    </a>
+    <script>
+      document.getElementById('events-link').addEventListener('click', function () {
+        var lang = window.WaxBrewI18n ? window.WaxBrewI18n.currentLang() : 'en';
+        this.href = {en:'/events/',ru:'/events/ru/',sr:'/events/sr/'}[lang] || '/events/';
+        if (typeof window.gtag === 'function') window.gtag('event', 'click_catering', {
+          event_category: 'navigation', language: lang, placement: 'homepage_banner', transport_type: 'beacon'
+        });
+      });
+    </script>
+
     <!-- WaxBrew Cup News Banner -->
     <a class="news-banner" href="/loyalty/"
        onclick="gtag('event','click_news',{event_category:'conversion',event_label:'waxcup_launch'})">
