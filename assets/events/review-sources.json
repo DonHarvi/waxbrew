@@ -2,25 +2,36 @@
   "note": "Guest reviews of the cafés, not testimonials about event catering. Quotes kept in their original language. Links open location profiles, not individual review permalinks.",
   "reviews": [
     {
-      "author": "Johanna Lundell",
+      "author": "Charlotte Douglas",
+      "text": "Best coffee in Montenegro. Lovely staff too",
+      "language": "en",
       "location": "Tre Canne",
-      "text": "Well worth a small detour to get your coffee here. High quality, wide selection of plant based milks, and lovely staff! :)",
       "url": "https://maps.app.goo.gl/RknVLk8suPuqHojz6",
-      "source": "User-provided Google Business Profile excerpt, 2026-10-21. Relative dates and star counts not carried over."
+      "source": "User-provided Google Business Profile excerpt, 2026-10-21; selection approved by user. Relative dates and star counts not carried over."
     },
     {
-      "author": "Julie H.",
-      "location": "Textura",
-      "text": "Very friendly and helpful staff (helped us make our choice), good coffee and delicious pastries",
-      "url": "https://www.google.com/maps/place/WaxBrew+Specialty+Coffee+%26+Vinyl%2FTextura/@42.2893056,18.8324521,17z/data=!4m8!3m7!1s0x134dd5082f250a85:0x1e633dec97998383!8m2!3d42.2893056!4d18.835027!9m1!1b1!16s%2Fg%2F11kptdjz0k",
-      "source": "https://www.top-rated.online/cities/Budva/place/p/12752556/Textura%2Bcoffee%2Band%2Bart"
+      "author": "D D",
+      "text": "Best coffee in Budva",
+      "language": "en",
+      "location": "Tre Canne",
+      "url": "https://maps.app.goo.gl/RknVLk8suPuqHojz6",
+      "source": "User-provided Google Business Profile excerpt, 2026-10-21; selection approved by user. Relative dates and star counts not carried over."
     },
     {
-      "author": "Vladimir Samoilov",
+      "author": "Pavel",
+      "text": "One of the best specialty coffee in Budva. Thanks 😋",
+      "language": "en",
       "location": "Tre Canne",
-      "text": "Great coffee, tasty desserts, welcoming staff. Highly recommend.",
       "url": "https://maps.app.goo.gl/RknVLk8suPuqHojz6",
-      "source": "User-provided Google Business Profile excerpt, 2026-10-21."
+      "source": "User-provided Google Business Profile excerpt, 2026-10-21; selection approved by user. Relative dates and star counts not carried over."
+    },
+    {
+      "author": "Sema Erdoğmuş",
+      "text": "Budva da içtiğim en iyi kahve",
+      "language": "tr",
+      "location": "Tre Canne",
+      "url": "https://maps.app.goo.gl/RknVLk8suPuqHojz6",
+      "source": "User-provided Google Business Profile excerpt, 2026-10-21; selection approved by user. Relative dates and star counts not carried over."
     }
   ]
 }
