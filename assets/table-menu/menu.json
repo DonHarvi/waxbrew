@@ -1,0 +1,441 @@
+{
+  "location": "Tre Canne",
+  "currency": "EUR",
+  "source": "User-supplied app/index.html in Kimi_Agent_WaxBrew QR.zip, 2026-11-05",
+  "breakfast_price": "10.00",
+  "items": {
+    "pumpkin-soup": {
+      "name": {
+        "en": "Pumpkin Soup",
+        "ru": "Тыквенный суп",
+        "sr": "Čorba od bundeve"
+      },
+      "price": "4.00",
+      "note": {
+        "en": "(+ cream 0.50)",
+        "ru": "(+ сливки 0.50)",
+        "sr": "(+ pavlaka 0.50)"
+      }
+    },
+    "all-day-breakfast-porridge": {
+      "name": {
+        "en": "All Day Breakfast · Porridge",
+        "ru": "Завтрак весь день · каша",
+        "sr": "Doručak cijelog dana · kaša"
+      },
+      "price": "10.00",
+      "note": {
+        "en": "(full set)",
+        "ru": "(полный набор)",
+        "sr": "(komplet)"
+      }
+    },
+    "lemon-pie-ice-latte": {
+      "name": {
+        "en": "Lemon Pie Ice Latte",
+        "ru": "Айс-латте «Лимонный пирог»",
+        "sr": "Ledeni late „Pita od limuna“"
+      },
+      "price": "5.00"
+    },
+    "espresso": {
+      "name": {
+        "en": "Espresso",
+        "ru": "Эспрессо",
+        "sr": "Espreso"
+      },
+      "price": "1.80 / 2.80"
+    },
+    "americano": {
+      "name": {
+        "en": "Americano",
+        "ru": "Американо",
+        "sr": "Amerikano"
+      },
+      "price": "2.80"
+    },
+    "macchiato": {
+      "name": {
+        "en": "Macchiato",
+        "ru": "Макиато",
+        "sr": "Makijato"
+      },
+      "price": "2.10 / 3.10"
+    },
+    "cappuccino": {
+      "name": {
+        "en": "Cappuccino",
+        "ru": "Капучино",
+        "sr": "Kapućino"
+      },
+      "price": "2.90 / 3.80"
+    },
+    "latte": {
+      "name": {
+        "en": "Latte",
+        "ru": "Латте",
+        "sr": "Late"
+      },
+      "price": "3.70"
+    },
+    "flat-white": {
+      "name": {
+        "en": "Flat White",
+        "ru": "Флэт уайт",
+        "sr": "Flat White"
+      },
+      "price": "3.50"
+    },
+    "raf-coffee": {
+      "name": {
+        "en": "Raf Coffee",
+        "ru": "Раф",
+        "sr": "Raf kafa"
+      },
+      "price": "4.70"
+    },
+    "bumble": {
+      "name": {
+        "en": "Bumble",
+        "ru": "Бамбл",
+        "sr": "Bumble"
+      },
+      "price": "5.00"
+    },
+    "espresso-tonic": {
+      "name": {
+        "en": "Espresso Tonic",
+        "ru": "Эспрессо-тоник",
+        "sr": "Espreso tonik"
+      },
+      "price": "4.00"
+    },
+    "filter": {
+      "name": {
+        "en": "Filter",
+        "ru": "Фильтр-кофе",
+        "sr": "Filter kafa"
+      },
+      "price": "2.50 / 3.50"
+    },
+    "v60": {
+      "name": {
+        "en": "V60",
+        "ru": "V60",
+        "sr": "V60"
+      },
+      "price": "4.00"
+    },
+    "cold-brew": {
+      "name": {
+        "en": "Cold Brew",
+        "ru": "Колд брю",
+        "sr": "Cold Brew"
+      },
+      "price": "2.50 / 3.70"
+    },
+    "lavender-cappuccino": {
+      "name": {
+        "en": "Lavender Cappuccino",
+        "ru": "Лавандовый капучино",
+        "sr": "Kapućino sa lavandom"
+      },
+      "price": "4.50"
+    },
+    "affogato": {
+      "name": {
+        "en": "Affogato",
+        "ru": "Аффогато",
+        "sr": "Afogato"
+      },
+      "price": "4.50"
+    },
+    "matcha-affogato": {
+      "name": {
+        "en": "Matcha Affogato",
+        "ru": "Матча-аффогато",
+        "sr": "Mača afogato"
+      },
+      "price": "5.00"
+    },
+    "raf-halva": {
+      "name": {
+        "en": "Raf Halva",
+        "ru": "Раф с халвой",
+        "sr": "Raf sa halvom"
+      },
+      "price": "5.00"
+    },
+    "orange-cocoa": {
+      "name": {
+        "en": "Orange Cocoa",
+        "ru": "Апельсиновое какао",
+        "sr": "Kakao sa narandžom"
+      },
+      "price": "4.00"
+    },
+    "tea": {
+      "name": {
+        "en": "Tea",
+        "ru": "Чай",
+        "sr": "Čaj"
+      },
+      "price": "3.50"
+    },
+    "cocoa": {
+      "name": {
+        "en": "Cocoa",
+        "ru": "Какао",
+        "sr": "Kakao"
+      },
+      "price": "3.50"
+    },
+    "matcha": {
+      "name": {
+        "en": "Matcha",
+        "ru": "Матча",
+        "sr": "Mača"
+      },
+      "price": "4.50"
+    },
+    "fresh-juice": {
+      "name": {
+        "en": "Fresh Juice",
+        "ru": "Свежевыжатый сок",
+        "sr": "Svježe cijeđeni sok"
+      },
+      "price": "4.50"
+    },
+    "fresh-mix": {
+      "name": {
+        "en": "Fresh Mix",
+        "ru": "Фреш-микс",
+        "sr": "Miks cijeđenih sokova"
+      },
+      "price": "5.00"
+    },
+    "lemonade": {
+      "name": {
+        "en": "Lemonade",
+        "ru": "Лимонад",
+        "sr": "Limunada"
+      },
+      "price": "3.50"
+    },
+    "croissant": {
+      "name": {
+        "en": "Croissant",
+        "ru": "Круассан",
+        "sr": "Kroasan"
+      },
+      "price": "2.50"
+    },
+    "croissant-pistachio": {
+      "name": {
+        "en": "Croissant Pistachio",
+        "ru": "Круассан с фисташкой",
+        "sr": "Kroasan sa pistaćima"
+      },
+      "price": "3.50"
+    },
+    "croissant-nutella": {
+      "name": {
+        "en": "Croissant Nutella",
+        "ru": "Круассан с Nutella",
+        "sr": "Kroasan sa Nutellom"
+      },
+      "price": "3.50"
+    },
+    "croissant-tuna": {
+      "name": {
+        "en": "Croissant Tuna",
+        "ru": "Круассан с тунцом",
+        "sr": "Kroasan sa tunjevinom"
+      },
+      "price": "6.00"
+    },
+    "crepes": {
+      "name": {
+        "en": "Crepes",
+        "ru": "Блины",
+        "sr": "Palačinke"
+      },
+      "price": "4.50"
+    },
+    "crepes-ham-cheese": {
+      "name": {
+        "en": "Crepes Ham & Cheese",
+        "ru": "Блины с ветчиной и сыром",
+        "sr": "Palačinke sa šunkom i sirom"
+      },
+      "price": "4.50"
+    },
+    "syrniki": {
+      "name": {
+        "en": "Syrniki",
+        "ru": "Сырники",
+        "sr": "Sirniki"
+      },
+      "price": "5.00"
+    },
+    "milk-porridge-with-pear": {
+      "name": {
+        "en": "Milk Porridge with Pear",
+        "ru": "Молочная каша с грушей",
+        "sr": "Mliječna kaša sa kruškom"
+      },
+      "price": "5.00"
+    },
+    "granola": {
+      "name": {
+        "en": "Granola",
+        "ru": "Гранола",
+        "sr": "Granola"
+      },
+      "price": "4.00"
+    },
+    "brownie": {
+      "name": {
+        "en": "Brownie",
+        "ru": "Брауни",
+        "sr": "Brauni"
+      },
+      "price": "5.00"
+    },
+    "lemon-cake": {
+      "name": {
+        "en": "Lemon Cake",
+        "ru": "Лимонный торт",
+        "sr": "Kolač od limuna"
+      },
+      "price": "4.50"
+    },
+    "pistachio-cheesecake": {
+      "name": {
+        "en": "Pistachio Cheesecake",
+        "ru": "Фисташковый чизкейк",
+        "sr": "Čizkejk sa pistaćima"
+      },
+      "price": "6.00"
+    }
+  },
+  "categories": [
+    {
+      "id": "popular",
+      "name": {
+        "en": "Popular",
+        "ru": "Популярное",
+        "sr": "Popularno"
+      },
+      "show_sizes": false,
+      "items": [
+        "pumpkin-soup",
+        "all-day-breakfast-porridge",
+        "lemon-pie-ice-latte"
+      ]
+    },
+    {
+      "id": "season",
+      "name": {
+        "en": "Season",
+        "ru": "Сезонное",
+        "sr": "Sezonsko"
+      },
+      "show_sizes": false,
+      "items": [
+        "lemon-pie-ice-latte",
+        "lavender-cappuccino",
+        "affogato",
+        "matcha-affogato",
+        "raf-halva",
+        "orange-cocoa"
+      ]
+    },
+    {
+      "id": "food",
+      "name": {
+        "en": "Food",
+        "ru": "Еда",
+        "sr": "Hrana"
+      },
+      "show_sizes": false,
+      "items": [
+        "pumpkin-soup",
+        "croissant",
+        "croissant-pistachio",
+        "croissant-nutella",
+        "croissant-tuna",
+        "crepes",
+        "crepes-ham-cheese",
+        "syrniki",
+        "milk-porridge-with-pear",
+        "granola"
+      ]
+    },
+    {
+      "id": "classic",
+      "name": {
+        "en": "Classic",
+        "ru": "Классика",
+        "sr": "Klasika"
+      },
+      "show_sizes": true,
+      "items": [
+        "espresso",
+        "americano",
+        "macchiato",
+        "cappuccino",
+        "latte",
+        "flat-white",
+        "raf-coffee",
+        "bumble",
+        "espresso-tonic"
+      ]
+    },
+    {
+      "id": "alternative",
+      "name": {
+        "en": "Alternative",
+        "ru": "Альтернатива",
+        "sr": "Alternativa"
+      },
+      "show_sizes": true,
+      "items": [
+        "filter",
+        "v60",
+        "cold-brew"
+      ]
+    },
+    {
+      "id": "notcoffee",
+      "name": {
+        "en": "Not Coffee",
+        "ru": "Не кофе",
+        "sr": "Bez kafe"
+      },
+      "show_sizes": false,
+      "items": [
+        "tea",
+        "cocoa",
+        "matcha",
+        "fresh-juice",
+        "fresh-mix",
+        "lemonade"
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": {
+        "en": "Desserts",
+        "ru": "Десерты",
+        "sr": "Deserti"
+      },
+      "show_sizes": false,
+      "items": [
+        "brownie",
+        "lemon-cake",
+        "pistachio-cheesecake"
+      ]
+    }
+  ]
+}
