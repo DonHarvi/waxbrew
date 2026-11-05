@@ -335,6 +335,44 @@
       ]
     },
     {
+      "id": "season",
+      "name": {
+        "en": "Season",
+        "ru": "Сезонное",
+        "sr": "Sezonsko"
+      },
+      "show_sizes": false,
+      "items": [
+        "lemon-pie-ice-latte",
+        "lavender-cappuccino",
+        "affogato",
+        "matcha-affogato",
+        "raf-halva",
+        "orange-cocoa"
+      ]
+    },
+    {
+      "id": "food",
+      "name": {
+        "en": "Food",
+        "ru": "Еда",
+        "sr": "Hrana"
+      },
+      "show_sizes": false,
+      "items": [
+        "pumpkin-soup",
+        "croissant",
+        "croissant-pistachio",
+        "croissant-nutella",
+        "croissant-tuna",
+        "crepes",
+        "crepes-ham-cheese",
+        "syrniki",
+        "milk-porridge-with-pear",
+        "granola"
+      ]
+    },
+    {
       "id": "classic",
       "name": {
         "en": "Classic",
@@ -369,23 +407,6 @@
       ]
     },
     {
-      "id": "season",
-      "name": {
-        "en": "Season",
-        "ru": "Сезонное",
-        "sr": "Sezonsko"
-      },
-      "show_sizes": false,
-      "items": [
-        "lemon-pie-ice-latte",
-        "lavender-cappuccino",
-        "affogato",
-        "matcha-affogato",
-        "raf-halva",
-        "orange-cocoa"
-      ]
-    },
-    {
       "id": "notcoffee",
       "name": {
         "en": "Not Coffee",
@@ -400,27 +421,6 @@
         "fresh-juice",
         "fresh-mix",
         "lemonade"
-      ]
-    },
-    {
-      "id": "food",
-      "name": {
-        "en": "Food",
-        "ru": "Еда",
-        "sr": "Hrana"
-      },
-      "show_sizes": false,
-      "items": [
-        "pumpkin-soup",
-        "croissant",
-        "croissant-pistachio",
-        "croissant-nutella",
-        "croissant-tuna",
-        "crepes",
-        "crepes-ham-cheese",
-        "syrniki",
-        "milk-porridge-with-pear",
-        "granola"
       ]
     },
     {

@@ -142,9 +142,9 @@ footer a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
   *{transition:none!important;animation:none!important}
 }
 
-:root{--header-height:160px}
+:root{--header-height:124px}
 html{scroll-padding-top:calc(var(--header-height) + 14px)}
-.utility-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:9px}
+.utility-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:0}
 .lang-switch{display:flex;gap:6px}
 .lang-btn{font:600 12px 'Archivo',sans-serif;min-width:38px;min-height:34px;padding:6px 9px;border:1px solid var(--line);border-radius:7px;background:transparent;color:var(--ink);cursor:pointer}
 .lang-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}

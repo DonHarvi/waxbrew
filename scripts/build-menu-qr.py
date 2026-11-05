@@ -52,15 +52,13 @@ def draw_qr(c,x,y,side):
 def card(c,x=0,y=0):
  c.saveState();c.translate(x,y)
  c.setFillColor(HexColor(PAPER));c.roundRect(5*mm,5*mm,95*mm,138*mm,3*mm,stroke=0,fill=1)
- centered(c,'WAXBREW',18,'Brand',17)
- centered(c,'TRE CANNE · BUDVA',26,'BodyBold',8.5,MUTED)
- c.setStrokeColor(HexColor(ORANGE));c.setLineWidth(1.5);c.line(41*mm,H-32*mm,64*mm,H-32*mm)
- centered(c,'MENU',50,'Brand',42,ORANGE)
- centered(c,'MENI · МЕНЮ',58,'BodyBold',11)
- centered(c,'SCAN · SKENIRAJTE · СКАНИРУЙТЕ',66,'BodyBold',7.4)
- draw_qr(c,(W-55*mm)/2,H-125*mm,55*mm)
- centered(c,'waxbrew.com/tre-canne/menu',134,'Body',8.5)
- centered(c,'EN / SR / RU',140,'BodyBold',7,MUTED)
+ centered(c,'TRE CANNE · BUDVA',22,'BodyBold',8.5,MUTED)
+ c.setStrokeColor(HexColor(ORANGE));c.setLineWidth(1.5);c.line(41*mm,H-28*mm,64*mm,H-28*mm)
+ centered(c,'MENU',46,'Brand',42,ORANGE)
+ centered(c,'SCAN · SKENIRAJTE · СКАНИРУЙТЕ',58,'BodyBold',7.4)
+ draw_qr(c,(W-55*mm)/2,H-119*mm,55*mm)
+ centered(c,'waxbrew.com/tre-canne/menu',130,'Body',8.5)
+ centered(c,'EN / SR / RU',138,'BodyBold',7,MUTED)
  c.restoreState()
 
 single=OUT/'waxbrew-tre-canne-menu-a6.pdf'

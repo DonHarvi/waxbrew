@@ -46,12 +46,8 @@ html+=text('a',tr('Skip to menu','Перейти к меню','Pređite na meni'
 html+='''
 <header class="topbar">
   <div class="topbar-inner">
-    <div class="brand">
-      <a class="brand-name" href="#top">Wax<span>Brew</span></a>
-      <span class="brand-note">Tre Canne</span>
-    </div>
     <div class="utility-row">
-'''+text('span',tr('Coffee · Food','Кофе · Еда','Kafa · Hrana'),'class="brand-note"')+'''
+      <span class="brand-note">Tre Canne</span>
       <div class="lang-switch" role="group" aria-label="Language / Jezik / Язык">
         <button class="lang-btn" type="button" data-lang="en" lang="en" aria-pressed="true">EN</button>
         <button class="lang-btn" type="button" data-lang="sr" lang="sr" aria-pressed="false">SR</button>
