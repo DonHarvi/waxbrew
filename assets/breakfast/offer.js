@@ -3,9 +3,9 @@
   var language = document.documentElement.lang.split('-')[0];
   var lang = ['sr', 'ru', 'en'].includes(language) ? language : 'sr';
   var words = {
-    sr: {ready:'Vaš kupon je spreman. Pritisnite „Preuzmi kupon“ i sačuvajte snimak ekrana.', missing:'Otvorite link iz objave vašeg blogera da biste dobili svoj kupon.', pending:'Ponuda se priprema. Detalji poklona biće objavljeni uskoro.', expired:'Ova ponuda je završena.', error:'Kupon trenutno nije dostupan. Pokušajte ponovo kasnije.', demo:'Pregled stranice: ovo je demonstracioni kupon.', desserts:'Deserti u ponudi: ', undecided:'Izbor deserta još nije potvrđen.', creator:'Poklon preko: ', copied:'Kod je kopiran. Sačuvajte i snimak ekrana cijelog kupona.', copyFailed:'Kopiranje nije dostupno. Sačuvajte snimak ekrana kupona.'},
-    ru: {ready:'Купон готов. Нажмите «Забрать купон» и сохраните скриншот.', missing:'Откройте ссылку из публикации вашего блогера, чтобы получить свой купон.', pending:'Предложение готовится. Подробности подарка скоро появятся здесь.', expired:'Эта акция завершена.', error:'Купон сейчас недоступен. Попробуйте позже.', demo:'Предпросмотр страницы: это демонстрационный купон.', desserts:'Десерты на выбор: ', undecided:'Список десертов пока не утверждён.', creator:'Подарок от: ', copied:'Код скопирован. Сохраните также скриншот всего купона.', copyFailed:'Копирование недоступно. Сохраните скриншот купона.'},
-    en: {ready:'Your coupon is ready. Tap “Get your coupon” and save a screenshot.', missing:'Open the link in your creator’s post to get your coupon.', pending:'This offer is being prepared. Gift details will be available soon.', expired:'This offer has ended.', error:'The coupon is currently unavailable. Please try again later.', demo:'Page preview: this is a demonstration coupon.', desserts:'Dessert options: ', undecided:'The dessert selection has not yet been confirmed.', creator:'Gift via: ', copied:'Code copied. Please also save a screenshot of the full coupon.', copyFailed:'Copying is unavailable. Please save a screenshot of the coupon.'}
+    sr: {ready:'Vaš kupon je spreman. Pritisnite „Preuzmi kupon“ i sačuvajte snimak ekrana.', missing:'Otvorite link iz objave vašeg blogera da biste dobili svoj kupon.', pending:'Ponuda se priprema. Detalji poklona biće objavljeni uskoro.', expired:'Ova ponuda je završena.', error:'Kupon trenutno nije dostupan. Pokušajte ponovo kasnije.', demo:'Pregled stranice: ovo je demonstracioni kupon.', desserts:'Deserti u ponudi: ', undecided:'Izbor deserta još nije potvrđen.', creator:'Poklon preko: '},
+    ru: {ready:'Купон готов. Нажмите «Забрать купон» и сохраните скриншот.', missing:'Откройте ссылку из публикации вашего блогера, чтобы получить свой купон.', pending:'Предложение готовится. Подробности подарка скоро появятся здесь.', expired:'Эта акция завершена.', error:'Купон сейчас недоступен. Попробуйте позже.', demo:'Предпросмотр страницы: это демонстрационный купон.', desserts:'Десерты на выбор: ', undecided:'Список десертов пока не утверждён.', creator:'Подарок от: '},
+    en: {ready:'Your coupon is ready. Tap “Get your coupon” and save a screenshot.', missing:'Open the link in your creator’s post to get your coupon.', pending:'This offer is being prepared. Gift details will be available soon.', expired:'This offer has ended.', error:'The coupon is currently unavailable. Please try again later.', demo:'Page preview: this is a demonstration coupon.', desserts:'Dessert options: ', undecided:'The dessert selection has not yet been confirmed.', creator:'Gift via: '}
   }[lang];
   var query = new URLSearchParams(location.search);
   var demo = query.get('preview') === '1';
@@ -30,7 +30,7 @@
     enabled = false;
     buttons.forEach(function(b) { b.disabled = true; });
     coupon.hidden = true;
-    document.querySelector('[data-coupon-tools]').hidden = true;
+    document.querySelector('[data-coupon-help]').hidden = true;
     document.querySelector('[data-gift-kicker]').textContent = words.expired;
     document.querySelector('.hero-intro p').textContent = words.expired;
     status.textContent = words.expired;
@@ -89,7 +89,7 @@
       if (!enabled || !checkExpiry()) return;
       coupon.hidden = false;
       document.body.classList.add('coupon-in-view');
-      document.querySelector('[data-coupon-tools]').hidden = false;
+      document.querySelector('[data-coupon-help]').hidden = false;
       coupon.focus({preventScroll:true});
       coupon.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'});
       if (!revealed) track('view_breakfast_coupon', {coupon_code:blogger ? blogger.code : ''});
@@ -101,14 +101,6 @@
       document.body.classList.toggle('coupon-in-view', !coupon.hidden && entries[0].isIntersecting);
     }).observe(coupon);
   }
-  document.querySelector('[data-copy-coupon]').addEventListener('click', async function() {
-    if (!enabled || !revealed || !checkExpiry()) return;
-    try {
-      await navigator.clipboard.writeText(document.querySelector('[data-coupon-code]').textContent);
-      document.querySelector('[data-copy-status]').textContent = words.copied;
-      track('copy_breakfast_coupon', {coupon_code:blogger ? blogger.code : ''});
-    } catch (_) { document.querySelector('[data-copy-status]').textContent = words.copyFailed; }
-  });
   document.addEventListener('visibilitychange', function() { if (!document.hidden) checkExpiry(); });
   document.addEventListener('click', function(event) {
     var a = event.target.closest('a');

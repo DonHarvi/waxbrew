@@ -28,11 +28,11 @@ For layout review, append `?preview=1`. This shows `WAXBREW-DEMO` with a promine
 
 ## Measurement and limitations
 
-`view_breakfast_offer` records offer status, `view_breakfast_coupon` records the first coupon reveal on the page, and `copy_breakfast_coupon` records successful code copying. Campaign events carry the validated creator slug and language. Route, internal directions and loyalty clicks are also tracked. Coupon opens, copies and screenshots do not establish redemption; redeemed gifts are counted in the POS as described in the brief. Browser screenshots themselves cannot be detected.
+`view_breakfast_offer` records offer status, `view_breakfast_coupon` records the first coupon reveal on the page. Campaign events carry the validated creator slug and language. Route, internal directions and loyalty clicks are also tracked. Coupon opens and screenshots do not establish redemption; redeemed gifts are counted in the POS as described in the brief. Browser screenshots themselves cannot be detected.
 
 This is a static, reusable creator coupon, not a unique single-use voucher. The barista checks the date and one-dessert-per-guest condition. The browser prevents new reveals after expiry using Montenegro time; it cannot revoke saved screenshots or independently verify the device clock.
 
-The browser fetches configuration without caching, uses text content for names/codes, and rechecks expiry on reveal, copy and return to the page. No recipient information is collected. The source export and full blogger brief are not published.
+The browser fetches configuration without caching, uses text content for names/codes, and rechecks expiry on reveal and return to the page. No recipient information is collected. The source export and full blogger brief are not published.
 
 ## Maintenance
 

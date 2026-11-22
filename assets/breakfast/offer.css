@@ -4,7 +4,7 @@
 .offer-page .hero .eyebrow{display:block;margin-bottom:8px}
 .offer-page .hero-intro p{font-size:16px}
 .gift-button{font-family:inherit;border:0;cursor:pointer}
-.gift-button:focus-visible,.coupon-copy:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+.gift-button:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
 .gift-button:disabled{opacity:.55;cursor:default;box-shadow:none}
 .coupon-section{padding:12px 20px 28px;scroll-margin-top:20px;max-width:760px;margin:auto}
 .coupon-section>h2{font-size:26px;line-height:1.2;margin-bottom:12px}
@@ -20,7 +20,6 @@
 .coupon-in-view .sticky{display:none}
 .coupon .coupon-terms{font-size:14px;border-top:1px solid #d8c2a6;padding-top:14px}
 .demo-label{background:#412516;color:#fff1d9;font-size:14px!important;font-weight:700;border-radius:6px;padding:8px 12px}
-.coupon-copy{font-family:inherit;font-size:15px;font-weight:700;line-height:1.4;background:transparent;border:1px solid #412516;color:#412516;padding:10px 16px;border-radius:8px;cursor:pointer;margin-top:8px}
 .coupon-help{font-size:15px;line-height:1.5;color:var(--muted);margin-top:14px}
 .offer-how{padding:24px 0;border-bottom:1px solid var(--line)}
 .offer-how h3{font-size:20px;margin-bottom:12px}
