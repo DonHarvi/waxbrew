@@ -36,4 +36,31 @@ The browser fetches configuration without caching, uses text content for names/c
 
 ## Maintenance
 
+### Advertising audiences
+
+Shared `assets/analytics.js` loads `assets/marketing.js`. Meta dataset/pixel: `2044160039594691`; GA4: `G-PMMNXCF8LX`.
+
+Advertising consent defaults to denied. The visitor can allow or decline advertising cookies in English, Serbian or Russian and change their choice using the footer button. The choice expires after 180 days. Meta is loaded only after permission; Google `ad_storage`, `ad_user_data` and `ad_personalization` follow the same choice. Existing Google analytics collection is unchanged. This is advertising consent, not a replacement of the site's overall privacy policy. No noscript pixel bypass is installed.
+
+Meta events after consent:
+
+| Event | Trigger | Parameters |
+| --- | --- | --- |
+| `PageView` | Current page, once | Standard Meta page data |
+| `BloggerVisit` | Offer page with a configured, active blogger | `campaign=blogeri`, `blogger_id`, `language`, `location_name=tre_canne` |
+| `BreakfastCouponOpen` | First coupon reveal | Same parameters plus `coupon_code` |
+
+The current offer-page view is sent if consent is granted after the page opens. Earlier clicks are not replayed. Events are deduplicated per page; `preview=1` never loads Meta. Unknown/inactive bloggers do not generate these custom events. Opening a coupon is not a purchase or a redemption.
+
+Account-side setup is separate and has not been performed by this code change:
+
+- Meta: create website Custom Audiences on this dataset for `BloggerVisit` (90 days) and `BreakfastCouponOpen` (30 days). Optional per-creator audiences filter `blogger_id`.
+- GA4: create audiences for `view_breakfast_offer` (90 days) and `view_breakfast_coupon` (30 days), with same-event conditions `campaign_name=blogeri` and `blogger_id` matching one of `detaljzivota`, `dragana_cvijet_iz_kamena`, `___anamarkovic___`. Register event-scoped `blogger_id` as a custom dimension for creator reporting/filtering; `coupon_code` is optional.
+- Verify the GA4 property is linked to the intended Google Ads account with personalised advertising enabled, then verify audience export. The site's consent signals do not establish this account link.
+- In Events Manager and GA4, verify real incoming visits. Browser checks establish correct requests, not account-side audience creation or eligibility for delivery.
+
+Audience collection depends on consent and browser/ad-blocking settings. Audiences must meet the advertising platform's eligibility requirements before campaigns can serve.
+
+### Editing the offer
+
 Edit the shared breakfast pages first, then run `python3 scripts/build-breakfast-offer.py` to regenerate the three campaign variants. Campaign styles and behavior live in `offer.css` and `offer.js`. Keep the deadline in the JSON and all translated coupon terms consistent. The shared hero photo `combo-syrniki.webp` was extracted from the owner's `waxbrew-breakfast-combo-a6-cream-hero.pdf`, page 1, and converted to WebP without changing the composition.
