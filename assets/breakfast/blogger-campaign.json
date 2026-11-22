@@ -1,0 +1,16 @@
+{
+  "campaign": "blogeri",
+  "valid_until": "2026-12-31",
+  "timezone": "Europe/Podgorica",
+  "eligible_desserts": {
+    "sr": "brauni, kolač od limuna ili čizkejk",
+    "ru": "брауни, лимонный кекс или чизкейк",
+    "en": "brownie, lemon cake or cheesecake"
+  },
+  "bloggers": {
+    "detaljzivota": {"name": "Renata · @detaljzivota", "code": "WAXBREW-RENATA", "active": true},
+    "dragana_cvijet_iz_kamena": {"name": "Dragana · @dragana_cvijet_iz_kamena", "code": "WAXBREW-DRAGANA", "active": true},
+    "___anamarkovic___": {"name": "Ana · @___anamarkovic___", "code": "WAXBREW-ANA", "active": true},
+    "mjfiiii": {"name": "Manuela · @mjfiiii", "code": "WAXBREW-MANUELA", "active": false}
+  }
+}

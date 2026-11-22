@@ -1,0 +1,38 @@
+[hidden]{display:none!important}
+.gift-kicker{display:inline-block;background:#412516;color:#fff3df;font-weight:700;font-size:16px;padding:8px 14px;border-radius:9px;margin:0 0 14px}
+.offer-page .hero h1{font-size:clamp(32px,4vw,48px)}
+.offer-page .hero .eyebrow{display:block;margin-bottom:8px}
+.offer-page .hero-intro p{font-size:16px}
+.gift-button{font-family:inherit;border:0;cursor:pointer}
+.gift-button:focus-visible,.coupon-copy:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+.gift-button:disabled{opacity:.55;cursor:default;box-shadow:none}
+.coupon-section{padding:12px 20px 28px;scroll-margin-top:20px;max-width:760px;margin:auto}
+.coupon-section>h2{font-size:26px;line-height:1.2;margin-bottom:12px}
+.offer-status{color:var(--muted);font-size:16px;line-height:1.5}
+.coupon{background:#fff1d9;border:2px solid #412516;border-radius:20px;padding:24px;color:#412516;margin-top:18px;scroll-margin-top:20px;outline:none}
+.coupon-top{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #d8c2a6;padding-bottom:14px;margin-bottom:18px}
+.coupon-brand{font-weight:800;letter-spacing:.05em;font-size:18px}
+.coupon-location{font-size:14px}
+.coupon h3{font-size:clamp(24px,5vw,34px);line-height:1.15;margin:0 0 10px}
+.coupon p{font-size:16px;line-height:1.5;margin:10px 0}
+.coupon-code{display:block;font:800 clamp(20px,4vw,28px)/1.3 monospace;letter-spacing:.025em;overflow-wrap:anywhere;background:#fffaf1;padding:16px;border:1px dashed #9d7350;border-radius:8px;margin:18px 0}
+.coupon [data-creator-name]{overflow-wrap:anywhere;font-size:14px}
+.coupon-in-view .sticky{display:none}
+.coupon .coupon-terms{font-size:14px;border-top:1px solid #d8c2a6;padding-top:14px}
+.demo-label{background:#412516;color:#fff1d9;font-size:14px!important;font-weight:700;border-radius:6px;padding:8px 12px}
+.coupon-copy{font-family:inherit;font-size:15px;font-weight:700;line-height:1.4;background:transparent;border:1px solid #412516;color:#412516;padding:10px 16px;border-radius:8px;cursor:pointer;margin-top:8px}
+.coupon-help{font-size:15px;line-height:1.5;color:var(--muted);margin-top:14px}
+.offer-how{padding:24px 0;border-bottom:1px solid var(--line)}
+.offer-how h3{font-size:20px;margin-bottom:12px}
+.offer-how ol{padding-left:22px;display:grid;gap:10px;font-size:16px}
+.offer-loyalty{padding:22px 0 8px;font-size:16px}
+.offer-loyalty a{color:var(--orange);font-weight:700;text-underline-offset:4px}
+.offer-page .sticky button{flex:1;border:0;font-size:15px;font-weight:700;border-radius:999px;padding:11px 8px;line-height:1.3}
+@media(max-width:760px){
+ .gift-kicker{font-size:15px;margin-bottom:10px;padding:6px 10px}
+ .offer-page .hero h1{font-size:clamp(28px,7vw,36px)}
+ .offer-page .hero-layout{gap:14px}
+ .offer-page .hero .eyebrow{font-size:11px;letter-spacing:.07em}
+ .offer-page .hero-photo{max-width:390px;width:100%;justify-self:center}
+ .coupon{padding:20px}
+}
