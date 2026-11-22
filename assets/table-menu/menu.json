@@ -1,7 +1,7 @@
 {
   "location": "Tre Canne",
   "currency": "EUR",
-  "source": "User-supplied app/index.html in Kimi_Agent_WaxBrew QR.zip, 2026-11-05",
+  "source": "Prototype: user-supplied app/index.html in Kimi_Agent_WaxBrew QR.zip, 2026-11-05. Matched dine-in prices and requested additions: Tre Canne articles-export-1795354288.csv, 2026-11-22. Archive status is unavailable in the export.",
   "breakfast_price": "10.00",
   "items": {
     "pumpkin-soup": {
@@ -224,11 +224,11 @@
     },
     "croissant": {
       "name": {
-        "en": "Croissant",
-        "ru": "Круассан",
-        "sr": "Kroasan"
+        "en": "Plain Croissant",
+        "ru": "Круассан без начинки",
+        "sr": "Prazan kroasan"
       },
-      "price": "2.50"
+      "price": "1.50"
     },
     "croissant-pistachio": {
       "name": {
@@ -244,7 +244,7 @@
         "ru": "Круассан с Nutella",
         "sr": "Kroasan sa Nutellom"
       },
-      "price": "3.50"
+      "price": "3.00"
     },
     "croissant-tuna": {
       "name": {
@@ -252,7 +252,7 @@
         "ru": "Круассан с тунцом",
         "sr": "Kroasan sa tunjevinom"
       },
-      "price": "6.00"
+      "price": "5.00"
     },
     "crepes": {
       "name": {
@@ -260,7 +260,7 @@
         "ru": "Блины",
         "sr": "Palačinke"
       },
-      "price": "4.50"
+      "price": "2.50"
     },
     "crepes-ham-cheese": {
       "name": {
@@ -276,7 +276,7 @@
         "ru": "Сырники",
         "sr": "Sirniki"
       },
-      "price": "5.00"
+      "price": "6.00"
     },
     "milk-porridge-with-pear": {
       "name": {
@@ -284,7 +284,7 @@
         "ru": "Молочная каша с грушей",
         "sr": "Mliječna kaša sa kruškom"
       },
-      "price": "5.00"
+      "price": "4.00"
     },
     "granola": {
       "name": {
@@ -292,7 +292,7 @@
         "ru": "Гранола",
         "sr": "Granola"
       },
-      "price": "4.00"
+      "price": "4.50"
     },
     "brownie": {
       "name": {
@@ -300,15 +300,15 @@
         "ru": "Брауни",
         "sr": "Brauni"
       },
-      "price": "5.00"
+      "price": "3.50"
     },
     "lemon-cake": {
       "name": {
         "en": "Lemon Cake",
-        "ru": "Лимонный торт",
+        "ru": "Лимонный кекс",
         "sr": "Kolač od limuna"
       },
-      "price": "4.50"
+      "price": "3.00"
     },
     "pistachio-cheesecake": {
       "name": {
@@ -317,6 +317,30 @@
         "sr": "Čizkejk sa pistaćima"
       },
       "price": "6.00"
+    },
+    "lentil-soup": {
+      "name": {
+        "en": "Lentil Soup",
+        "ru": "Чечевичный суп",
+        "sr": "Čorba od sočiva"
+      },
+      "price": "4.00"
+    },
+    "crepes-meat": {
+      "name": {
+        "en": "Crepes with Meat",
+        "ru": "Блины с мясом",
+        "sr": "Palačinke sa mesom"
+      },
+      "price": "4.50"
+    },
+    "rice-porridge-with-raspberry": {
+      "name": {
+        "en": "Rice Porridge with Raspberries",
+        "ru": "Рисовая каша с малиной",
+        "sr": "Pirinčana kaša sa malinama"
+      },
+      "price": "4.00"
     }
   },
   "categories": [
@@ -361,14 +385,17 @@
       "show_sizes": false,
       "items": [
         "pumpkin-soup",
+        "lentil-soup",
         "croissant",
         "croissant-pistachio",
         "croissant-nutella",
         "croissant-tuna",
         "crepes",
         "crepes-ham-cheese",
+        "crepes-meat",
         "syrniki",
         "milk-porridge-with-pear",
+        "rice-porridge-with-raspberry",
         "granola"
       ]
     },

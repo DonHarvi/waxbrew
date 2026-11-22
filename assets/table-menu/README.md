@@ -4,7 +4,9 @@ Public address: `https://waxbrew.com/tre-canne/menu/`.
 Printed QR target: `https://waxbrew.com/tre-canne/menu/?from=table`.
 Keep this route stable when updating the menu so printed codes remain valid.
 
-The user confirmed that the menu is for Tre Canne. The existing `/menu` page is Textura's menu and is kept separately. Item names, all 40 price rows and the breakfast offer were taken from the supplied prototype dated 2026-11-05. No unrelated archive files were copied into the repository.
+The user confirmed that the menu is for Tre Canne. The existing `/menu` page is Textura's menu and is kept separately. The initial items and breakfast offer came from the supplied prototype dated 2026-11-05. Matched dine-in prices were reconciled against `articles-export-1795354288.csv` (Tre Canne) on 2026-11-22; Glovo, promo and breakfast-component prices are excluded. The earlier Textura export is not a source for this menu. No raw POS exports or unrelated archive files were copied into the repository.
+
+The Tre Canne export contains no archive flag and all 188 rows have `SELLABLE=true`; do not treat that field as confirmation of current availability. Preserve the curated menu and add only requested dishes. Meat crepes (article 219, EUR 4.50) and lentil soup (221, EUR 4.00) are included. The owner confirmed on 2026-11-22 that `Porridge` (83) is the existing milk porridge with pear, and `Rice Porridge` (220) is rice porridge with raspberries; both are EUR 4.00 and included. The current menu selection is retained; no specific archived items were identified. The POS `Cheesecake` (99, EUR 6.00) does not specify a flavour; the existing pistachio cheesecake and breakfast set remain unchanged.
 
 ## Updating the menu
 
